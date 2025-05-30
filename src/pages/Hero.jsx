@@ -1,7 +1,11 @@
 const Hero = () => {
   return (
-    <div className="h-screen flex items-center justify-center bg-blue-100">
-      <h1 className="text-4xl font-bold">Welcome to the Home Page</h1>
+    <div className="">
+
+      <div className="flex items-center justify-center">
+        <h1 className="text-4xl font-bold bg-secondary">Aymen Shoteri</h1>
+      </div>
+
     </div>
   );
 };

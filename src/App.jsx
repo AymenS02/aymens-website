@@ -4,9 +4,8 @@ import Hero from './pages/Hero';
 
 const App = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <nav className="flex items-center ga
-      w-full h-20">
+    <div className="bg-background text-primary min-h-screen flex flex-col">
+      <nav className="flex items-center bg-background text-primary border-2 w-full h-20">
         <Link className='grow' to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/services">Services</Link>
