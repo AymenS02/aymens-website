@@ -10,11 +10,7 @@ const tabs = [
 ];
 
 const tabContent = {
-  experience: (
-    <p>
-      I’ve worked as a Full Stack Developer intern at XYZ Corp, building scalable applications using React, Node.js, and MongoDB. I also contributed to UI/UX improvements and performance optimizations.
-    </p>
-  ),
+  experience: <p>Here’s some experience content...</p>,
   skills: (
     <ul className="list-disc pl-6">
       <li>JavaScript / TypeScript</li>
@@ -37,29 +33,58 @@ const tabContent = {
   contact: (
     <p>
       Email: <a href="mailto:aymen@example.com" className="underline">aymen@example.com</a><br />
-      LinkedIn: <a href="https://linkedin.com/in/aymenshoteri" target="_blank" rel="noopener noreferrer" className="underline">/aymenshoteri</a>
+      LinkedIn: <a href="https://linkedin.com/in/aymenshoteri" className="underline">/aymenshoteri</a>
     </p>
   ),
 };
 
+// Define animation variants using a direction passed through 'custom'
+const variants = {
+  enter: (direction) => ({
+    x: direction > 0 ? 100 : -100,
+    opacity: 0,
+    filter: "blur(5px)",
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    filter: "blur(0px)",
+    transition: { type: "spring", duration: 0.5 },
+  },
+  exit: (direction) => ({
+    x: direction > 0 ? -100 : 100,
+    opacity: 0,
+    filter: "blur(5px)",
+    transition: { ease: "easeIn", duration: 0.5 },
+  }),
+};
+
 export default function Experience() {
-  const [activeTab, setActiveTab] = useState("experience");
+  const [[activeIndex, direction], setTab] = useState([0, 0]);
+
+  const activeTab = tabs[activeIndex].id;
+
+  const changeTab = (newIndex) => {
+    if (newIndex === activeIndex) return;
+    const dir = newIndex > activeIndex ? 1 : -1;
+    setTab([newIndex, dir]);
+  };
 
   return (
     <div className="flex flex-col items-center mt-[10vh] px-4 space-y-10">
       {/* Tab Buttons */}
-      <div className="flex space-x-2 bg-secondary p-2 rounded-full shadow-2xl relative border-2 border-primary">
-        {tabs.map((tab) => (
+      <div className="flex space-x-2 bg-secondary p-0.5 rounded-xl shadow-2xl relative border-2 border-primary">
+        {tabs.map((tab, idx) => (
           <button
             key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className="relative px-5 py-2 text-sm font-medium text-white rounded-full transition-all duration-300 ease-in-out z-20"
+            onClick={() => changeTab(idx)}
+            className="relative px-5 py-4 text-sm font-medium text-white rounded-full transition-all duration-300 ease-in-out z-20"
           >
             {activeTab === tab.id && (
               <motion.span
                 layoutId="bubble"
-                className="absolute inset-0 bg-primary mix-blend-difference rounded-full z-10"
-                transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
+                className="absolute inset-0 bg-primary mix-blend-difference rounded-xl z-10"
+                transition={{ type: "linear", duration: 0.3 }}
               />
             )}
             <span className="relative z-20">{tab.label}</span>
@@ -68,14 +93,15 @@ export default function Experience() {
       </div>
 
       {/* Animated Content */}
-      <div className="w-screen mx-auto text-black font-basic">
-        <AnimatePresence mode="wait">
+      <div className="w-screen mx-auto text-black font-basic px-8 max-w-2xl">
+        <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={activeTab}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.4 }}
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
           >
             {tabContent[activeTab]}
           </motion.div>
