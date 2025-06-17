@@ -1,3 +1,5 @@
+import Experience from "./Experience.jsx";
+
 const Hero = () => {
   return (
     <div className="w-full">
@@ -18,7 +20,7 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="flex items-center justify-center p-[2px] bg-primary rounded-xl">
+        <div className="flex items-center justify-center p-[2px] bg-primary rounded-xl shadow-2xl">
           <img
             src="./aymen.png"
             className="h-[25vh] rounded-xl border-2 border-black object-contain"
@@ -29,17 +31,14 @@ const Hero = () => {
       </div>
 
       {/* About Section */}
-      <div className="flex justify-center mt-[20vh]">
+      <div className="flex justify-center mt-[10vh]">
         <p className="text-center text-lg font-basic">
           Welcome to my portfolio! I am a Full Stack Developer with a passion for creating dynamic and responsive web applications. Explore my work and feel free to get in touch!
         </p>
       </div>
 
       {/* Experience Section */}
-
-
-      {/* Contact Section */}
-
+      <Experience />
 
     </div>
   );
