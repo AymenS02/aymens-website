@@ -10,7 +10,24 @@ const tabs = [
 ];
 
 const tabContent = {
-  experience: <p>Here’s some experience content...</p>,
+  experience: (
+    <div className="flex justify-evenly gap-4">
+      <img
+        src="./aymen.png"
+        className="h-[25vh] rounded-xl border-2 border-primary object-contain"
+        alt="Aymen Shoteri"
+      />
+      <div className="p-4 bg-accent rounded-xl border-2 border-primary">
+        <h2 className="text-2xl font-bold mb-4">The Win Column</h2>
+        <p className="text-lg mb-2">
+          I have worked on various projects, including web applications and games, utilizing technologies like React, Node.js, and MongoDB.
+        </p>
+        <p className="text-lg">
+          My experience includes internships and personal projects where I focused on full-stack development, UI design, and problem-solving.
+        </p>
+      </div>
+    </div>
+  ),
   skills: (
     <ul className="list-disc pl-6">
       <li>JavaScript / TypeScript</li>
@@ -71,7 +88,7 @@ export default function Experience() {
   };
 
   return (
-    <div className="flex flex-col items-center mt-[10vh] px-4 space-y-10">
+    <div className="w-full flex flex-col items-center mt-[10vh] px-4 space-y-10">
       {/* Tab Buttons */}
       <div className="flex space-x-2 bg-secondary p-0.5 rounded-xl shadow-2xl relative border-2 border-primary">
         {tabs.map((tab, idx) => (
@@ -93,7 +110,7 @@ export default function Experience() {
       </div>
 
       {/* Animated Content */}
-      <div className="w-screen mx-auto text-black font-basic px-8 max-w-2xl">
+      <div className="flex justify-center w-screen text-black font-basic px-8">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={activeTab}
@@ -102,6 +119,7 @@ export default function Experience() {
             initial="enter"
             animate="center"
             exit="exit"
+            className="w-[1000px] rounded-xl border-2 border-primary bg-secondary p-6 shadow-2xl"
           >
             {tabContent[activeTab]}
           </motion.div>
