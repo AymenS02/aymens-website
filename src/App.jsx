@@ -5,12 +5,12 @@ import Hero from './pages/Hero';
 const App = () => {
   return (
     <div className="m-0 p-0 bg-background text-primary flex flex-col">
-      <nav className="flex items-center bg-background text-primary border-2 w-full h-[10vh] px-20 gap-10 font-basic">
+      {/* <nav className="flex items-center bg-background text-primary border-2 w-full h-[100px] px-20 gap-10 font-basic">
         <Link className='grow' to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/services">Services</Link>
         <Link to="/contact">Contact</Link>
-      </nav>
+      </nav> */}
 
       <div className="flex justify-center w-[1000px] mx-auto my-[5vh] min-h-[80vh]">
         <Routes>
