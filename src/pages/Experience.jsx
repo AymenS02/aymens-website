@@ -198,7 +198,7 @@ const tabContent = {
             <div className="lg:w-3/4 p-6 lg:p-8">
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
                 <div>
-                  <h2 className="text-xl lg:text-2xl font-bold text-white mb-2">{exp.company}</h2>
+                  <h2 className="text-xl lg:text-2xl font-bold text-white text-shadow-sm/10 mb-2">{exp.company}</h2>
                   <p className="text-base lg:text-lg text-primary font-semibold mb-3">{exp.role}</p>
                 </div>
                 <div className="flex items-center text-gray-600 bg-gray-100 px-3 py-2 rounded-full">
@@ -234,7 +234,7 @@ const tabContent = {
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
       {skills.map((skillGroup, index) => (
         <div key={index} className="bg-accent rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-primary">
-          <h3 className="text-lg font-bold text-white mb-4 flex items-center">
+          <h3 className="text-lg font-bold text-white text-shadow-sm/10 mb-4 flex items-center">
             <div className="w-3 h-3 bg-gradient-to-r from-primary to-secondary rounded-full mr-3"></div>
             {skillGroup.category}
           </h3>
@@ -257,7 +257,7 @@ const tabContent = {
       {projects.map((project, index) => (
         <div key={index} className="bg-accent rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-primary group">
           <div className="flex items-start justify-between mb-4">
-            <h3 className="text-lg font-bold text-white group-hover:text-primary transition-colors duration-200">
+            <h3 className="text-lg font-bold text-white text-shadow-sm/10 group-hover:text-primary transition-colors duration-200">
               {project.title}
             </h3>
             <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors duration-200" />
@@ -291,7 +291,7 @@ const tabContent = {
           />
         </div>
         <div className="flex-1 text-center lg:text-left">
-          <h2 className="text-2xl font-bold text-white mb-4">About Me</h2>
+          <h2 className="text-2xl font-bold text-white text-shadow-sm/10 mb-4">About Me</h2>
           <p className="text-gray-700 leading-relaxed mb-6">
             I'm a 4th year Mathematics & Computer Science student at McMaster University, passionate about problem solving, UI design, and building things that matter. With experience across the full stack, I love creating seamless user experiences and robust backend systems that make a real impact.
           </p>
@@ -311,14 +311,14 @@ const tabContent = {
   ),
   contact: (
     <div className="bg-accent rounded-2xl p-8 shadow-lg border border-primary">
-      <h2 className="text-2xl font-bold text-white mb-6 text-center">Get In Touch</h2>
+      <h2 className="text-2xl font-bold text-white text-shadow-sm/10 mb-6 text-center">Get In Touch</h2>
       <div className="grid gap-6 md:grid-cols-3">
         <a 
           href="mailto:shoteriaymen@gmail.com"
           className="flex items-center justify-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl hover:from-blue-100 hover:to-blue-200 transition-all duration-300 group border border-blue-200"
         >
           <div className="text-center">
-            <Mail className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform duration-200" />
+            <Mail className="w-8 h-8 text-gray-600 mx-auto mb-3 group-hover:scale-110 transition-transform duration-200" />
             <h3 className="font-semibold text-gray-900">Email</h3>
             <p className="text-sm text-gray-600 mt-1">shoteriaymen@gmail.com</p>
           </div>
@@ -326,10 +326,10 @@ const tabContent = {
         
         <a 
           href="https://www.linkedin.com/in/aymen-shoteri/"
-          className="flex items-center justify-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl hover:from-purple-100 hover:to-purple-200 transition-all duration-300 group border border-purple-200"
+          className="flex items-center justify-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl hover:from-blue-100 hover:to-blue-200 transition-all duration-300 group border border-purple-200"
         >
           <div className="text-center">
-            <Linkedin className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform duration-200" />
+            <Linkedin className="w-8 h-8 text-gray-600 mx-auto mb-3 group-hover:scale-110 transition-transform duration-200" />
             <h3 className="font-semibold text-gray-900">LinkedIn</h3>
             <p className="text-sm text-gray-600 mt-1">/aymenshoteri</p>
           </div>
@@ -340,7 +340,7 @@ const tabContent = {
           className="flex items-center justify-center p-6 bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl hover:from-gray-100 hover:to-gray-200 transition-all duration-300 group border border-gray-200"
         >
           <div className="text-center">
-            <Github className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform duration-200" />
+            <Github className="w-8 h-8 text-gray-600 mx-auto mb-3 group-hover:scale-110 transition-transform duration-200" />
             <h3 className="font-semibold text-gray-900">GitHub</h3>
             <p className="text-sm text-gray-600 mt-1">View Projects</p>
           </div>
@@ -361,13 +361,13 @@ const variants = {
     x: 0,
     opacity: 1,
     filter: "blur(0px)",
-    transition: { type: "spring", duration: 0.5 },
+    transition: { type: "spring", duration: 0.2 },
   },
   exit: (direction) => ({
     x: direction > 0 ? -100 : 100,
     opacity: 0,
     filter: "blur(5px)",
-    transition: { ease: "easeIn", duration: 0.5 },
+    transition: { ease: "easeIn", duration: 0.2 },
   }),
 };
 
@@ -391,7 +391,8 @@ export default function Experience() {
           <button
             key={tab.id}
             onClick={() => changeTab(idx)}
-            className="relative px-5 py-4 text-sm font-medium text-white rounded-full transition-all duration-300 ease-in-out z-20"
+            className={`relative px-5 py-4 text-sm font-medium rounded-full transition-all duration-300 ease-in-out z-20 group
+              ${activeTab === tab.id ? "text-white" : "text-white hover:scale-115"}`}
           >
             {activeTab === tab.id && (
               <motion.span
