@@ -350,7 +350,7 @@ const tabContent = {
         >
           <div className="lg:flex">
             {/* Image Section */}
-            <div className="lg:w-1/4 bg-gradient-to-r from-primary to-accent p-8 flex items-center justify-center">
+            <div className="lg:w-1/4 bg-gradient-to-b lg:bg-gradient-to-r from-primary to-accent p-8 flex items-center justify-center">
               <div className="relative">
                 <img
                   src={exp.image}
@@ -598,12 +598,12 @@ export default function Experience() {
     <div className="min-h-screen">
       <div className="w-full flex flex-col items-center pt-20 px-4 space-y-10">
         {/* Tab Buttons */}
-        <div className="flex flex-wrap justify-center gap-2 bg-secondary p-0.5 rounded-2xl shadow-lg border border-primary">
+        <div className="flex flex-wrap justify-center gap-2 p-2 bg-secondary p-0.5 rounded-2xl shadow-lg border border-primary">
           {tabs.map((tab, idx) => (
           <button
             key={tab.id}
             onClick={() => changeTab(idx)}
-            className={`relative px-6 py-4 text-sm font-medium rounded-full transition-all duration-300 ease-in-out z-20 group
+            className={`relative px-5 py-3 text-sm font-medium rounded-full transition-all duration-300 ease-in-out z-20 group
               ${activeTab === tab.id ? "text-white" : "text-white hover:scale-115"}`}
           >
             {activeTab === tab.id && (
