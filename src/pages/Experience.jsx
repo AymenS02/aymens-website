@@ -14,165 +14,331 @@ const experiences = [
   {
     company: "The Win Column",
     period: "May 2024 - Aug 2024",
-    role: "Full Stack Developer",
+    role: "Full Stack Developer Intern",
     image: "./experience/thewin.png",
     highlights: [
-      { 
-        text: "Spearheaded the development of a dynamic educational platform using JavaScript, incorporating Coursera-like course management.",
-        icon: <Code className="w-4 h-4" />
+      {
+        icon: <Code className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Spearheaded the development of a dynamic educational platform</strong> using JavaScript, incorporating Coursera-like course management.
+          </p>
+        ),
       },
-      { 
-        text: "Implemented SCSS into the design to increase manageability and readability.",
-        icon: <Palette className="w-4 h-4" />
+      {
+        icon: <Palette className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Implemented SCSS</strong> into the design to increase manageability and readability.
+          </p>
+        ),
       },
-      { 
-        text: "Integrated secure payment gateways and user authentication systems using Collect.js, Tokenization, and Public Security Keys for smooth transactions.",
-        icon: <Database className="w-4 h-4" />
+      {
+        icon: <Database className="w-4 h-4" />,
+        text: (
+          <p>
+            Integrated <strong>secure payment gateways and user authentication</strong> using Collect.js, Tokenization, and Public Security Keys.
+          </p>
+        ),
       },
-      { 
-        text: "Designed and maintained RESTful APIs and optimized database queries to enhance platform performance and reliability with MongoDB Atlas.",
-        icon: <Database className="w-4 h-4" />
+      {
+        icon: <Database className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Designed and maintained RESTful APIs</strong> and optimized performance with <strong>MongoDB Atlas</strong>.
+          </p>
+        ),
       },
-      { 
-        text: "Ensured smooth operation for over 100 active users, effectively managing their data and maintaining high performance.",
-        icon: <Users className="w-4 h-4" />
+      {
+        icon: <Users className="w-4 h-4" />,
+        text: (
+          <p>
+            Ensured reliable performance for <strong>100+ active users</strong>, managing their data securely.
+          </p>
+        ),
       },
-      { 
-        text: "Engineered a responsive and intuitive user interface, ensuring seamless usability across various screen sizes.",
-        icon: <Code className="w-4 h-4" />
-      }
-    ]
+      {
+        icon: <Code className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Engineered a responsive and intuitive UI</strong> for smooth usability across screen sizes.
+          </p>
+        ),
+      },
+    ],
   },
   {
     company: "Freelancing Web Developer",
     period: "December 2023 - Present",
-    role: "Full Stack Developer",
+    role: "Freelancing Web Developer",
     image: "./experience/logoN.png",
     highlights: [
-      { 
-        text: "Developed custom websites using React and Next.js, aligned with client demands and requirements.",
-        icon: <Code className="w-4 h-4" />
+      {
+        icon: <Code className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Developed custom websites</strong> using React and Next.js, aligned with client needs.
+          </p>
+        ),
       },
-      { 
-        text: "Implemented Tailwind CSS to streamline the styling process, resulting in faster development and consistent design across projects.",
-        icon: <Palette className="w-4 h-4" />
+      {
+        icon: <Palette className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Implemented Tailwind CSS</strong> for faster development and consistent styling.
+          </p>
+        ),
       },
-      { 
-        text: "Integrated secure payment gateways and subscription models using Stripe and PayPal APIs, ensuring smooth and reliable transactions.",
-        icon: <Database className="w-4 h-4" />
+      {
+        icon: <Database className="w-4 h-4" />,
+        text: (
+          <p>
+            Integrated <strong>secure payments and subscriptions</strong> using Stripe and PayPal APIs.
+          </p>
+        ),
       },
-      { 
-        text: "Created interactive and animated websites using Framer Motion, engaging users with dynamic content and seamless transitions.",
-        icon: <Code className="w-4 h-4" />
+      {
+        icon: <Code className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Created animated sites</strong> with Framer Motion for dynamic user engagement.
+          </p>
+        ),
       },
-      { 
-        text: "Managed client databases using MongoDB, ensuring secure storage and quick access for over 50 active clients.",
-        icon: <Users className="w-4 h-4" />
+      {
+        icon: <Users className="w-4 h-4" />,
+        text: (
+          <p>
+            Managed <strong>MongoDB client databases</strong> for secure, scalable storage.
+          </p>
+        ),
       },
-      { 
-        text: "Designed responsive and user-friendly interfaces with Figma and implemented them with React, improving client satisfaction.",
-        icon: <Palette className="w-4 h-4" />
-      }
-    ]
+      {
+        icon: <Palette className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Designed and built interfaces</strong> with Figma and React, improving client satisfaction.
+          </p>
+        ),
+      },
+    ],
   },
   {
     company: "Road 2 Righteousness",
     period: "October 2024 - Present",
-    role: "Front-End Developer",
+    role: "Road 2 Righteousness Front-End Developer",
     image: "./experience/r2r.png",
     highlights: [
-      { 
-        text: "Developed a custom website for a self-development retreat company using React and Tailwind CSS, catering to over 200 visitors.",
-        icon: <Code className="w-4 h-4" />
+      {
+        icon: <Code className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Developed a custom site</strong> with React and Tailwind CSS, serving <strong>200+ visitors</strong>.
+          </p>
+        ),
       },
-      { 
-        text: "Implemented Tailwind CSS to streamline styling, ensuring a modern, responsive design that enhanced visual appeal.",
-        icon: <Palette className="w-4 h-4" />
+      {
+        icon: <Palette className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Implemented Tailwind CSS</strong> for a responsive and modern design.
+          </p>
+        ),
       },
-      { 
-        text: "Utilized GSAP animations to create engaging and dynamic user experiences with smooth transitions and interactive elements.",
-        icon: <Code className="w-4 h-4" />
+      {
+        icon: <Code className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Utilized GSAP animations</strong> to create smooth, interactive experiences.
+          </p>
+        ),
       },
-      { 
-        text: "Managed secure user registrations and data using a scalable backend for personal development session sign-ups.",
-        icon: <Database className="w-4 h-4" />
+      {
+        icon: <Database className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Managed secure user registration</strong> with a scalable backend.
+          </p>
+        ),
       },
-      { 
-        text: "Designed and implemented a booking system allowing users to seamlessly register for retreats.",
-        icon: <Users className="w-4 h-4" />
+      {
+        icon: <Users className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Built a retreat booking system</strong> to streamline user sign-ups.
+          </p>
+        ),
       },
-      { 
-        text: "Optimized the website for high traffic, ensuring smooth performance and quick load times during peak usage.",
-        icon: <Database className="w-4 h-4" />
-      }
-    ]
+      {
+        icon: <Database className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Optimized performance</strong> for high traffic and fast load times.
+          </p>
+        ),
+      },
+    ],
   },
   {
     company: "McMaster MSA",
     period: "October 2024 - Present",
-    role: "Website and Software Engineer",
+    role: "McMaster MSA Website and Software Engineer",
     image: "./experience/macmsa.png",
     highlights: [
-      { 
-        text: "Collaborated in a team of 6 to develop a full-stack website and portal for McMaster MSA, providing a seamless platform.",
-        icon: <Users className="w-4 h-4" />
+      {
+        icon: <Users className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Collaborated in a team of 6</strong> to build a full-stack website and portal.
+          </p>
+        ),
       },
-      { 
-        text: "Developed a responsive front-end using React, Next.js, and Tailwind CSS with modern design for students and admins.",
-        icon: <Code className="w-4 h-4" />
+      {
+        icon: <Code className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Built a responsive front-end</strong> with React, Next.js, and Tailwind CSS.
+          </p>
+        ),
       },
-      { 
-        text: "Implemented secure portal access for administrators using Firebase Authentication for efficient management.",
-        icon: <Database className="w-4 h-4" />
+      {
+        icon: <Database className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Secured admin access</strong> using Firebase Authentication.
+          </p>
+        ),
       },
-      { 
-        text: "Utilized Firebase Firestore as the backend to store and manage user data with real-time database solution.",
-        icon: <Database className="w-4 h-4" />
+      {
+        icon: <Database className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Utilized Firebase Firestore</strong> for scalable real-time data storage.
+          </p>
+        ),
       },
-      { 
-        text: "Incorporated GSAP animations to enhance user experience with smooth transitions and interactive elements.",
-        icon: <Code className="w-4 h-4" />
+      {
+        icon: <Code className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Incorporated GSAP animations</strong> for engaging UI transitions.
+          </p>
+        ),
       },
-      { 
-        text: "Designed and implemented admin dashboards for easy management of portal content, improving operational efficiency.",
-        icon: <Palette className="w-4 h-4" />
+      {
+        icon: <Palette className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Designed admin dashboards</strong> to manage portal content efficiently.
+          </p>
+        ),
       },
-      { 
-        text: "Optimized the website for performance, ensuring fast load times and smooth functionality during high traffic periods.",
-        icon: <Database className="w-4 h-4" />
-      }
-    ]
-  }
+      {
+        icon: <Database className="w-4 h-4" />,
+        text: (
+          <p>
+            <strong>Optimized for performance</strong> during high-traffic periods.
+          </p>
+        ),
+      },
+    ],
+  },
 ];
 
+
+
 const skills = [
-  { category: "Frontend", items: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "SCSS", "Framer Motion", "GSAP"] },
+  { category: "Frontend", items: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "SCSS", "Framer Motion", "GSAP", "WebGL"] },
   { category: "Backend", items: ["Node.js", "Express", "RESTful APIs", "Firebase", "Authentication"] },
   { category: "Database", items: ["MongoDB", "MongoDB Atlas", "Firebase Firestore", "Database Optimization"] },
   { category: "Tools & Technologies", items: ["Git", "Docker", "Figma", "Stripe API", "PayPal API", "Collect.js"] },
-  { category: "Soft Skills", items: ["Team Collaboration", "UI/UX Design", "Problem Solving", "Project Management"] }
+  { category: "Soft Skills", items: ["Team Collaboration", "UI/UX Design", "Problem Solving", "Project Management", "Graphic Design"] },
+  { category: "Languages", items: ["Python", "Java", "Haskell", "C", "C++"] } // <-- New category
 ];
 
 const projects = [
   {
-    title: "Educational Platform",
-    description: "A Coursera-like platform with course management, payment integration, and user authentication for 100+ active users.",
-    tech: ["JavaScript", "MongoDB", "SCSS", "Collect.js"],
-    link: "#"
-  },
-  {
-    title: "Self-Development Retreat Website",
-    description: "Modern website with booking system, GSAP animations, and optimized performance for 200+ visitors.",
+    title: "R2R Company Website",
+    description: "Production website for Road 2 Righteousness with advanced booking system, GSAP animations, and optimized performance for high traffic.",
     tech: ["React", "Tailwind CSS", "GSAP", "Backend Integration"],
-    link: "#"
+    liveLink: "https://www.road2righteousness.ca/",
+    githubLink: "https://github.com/AymenS02/R2R",
+    image: "/projects/r2rpage.png",
+    featured: true
   },
   {
-    title: "University Portal System",
-    description: "Full-stack platform for McMaster MSA with admin dashboards, Firebase authentication, and real-time data.",
-    tech: ["React", "Next.js", "Firebase", "Tailwind CSS"],
-    link: "#"
+    title: "Crypto Tracker App",
+    description: "Real-time cryptocurrency tracking application with live price updates, charts, and market data visualization.",
+    tech: ["React", "API Integration", "Chart.js", "CSS"],
+    liveLink: "https://aymens02.github.io/Crypto-Tracker/",
+    githubLink: "https://github.com/AymenS02/Crypto-Tracker",
+    image: "/projects/cointracker.png",
+    featured: true
+  },
+  {
+    title: "Limeworth X-ray & Ultrasound",
+    description: "Modern medical clinic website with responsive design, appointment booking, and service information.",
+    tech: ["React", "Tailwind CSS", "Responsive Design"],
+    liveLink: "https://aymens02.github.io/Limeworth/",
+    githubLink: "https://github.com/AymenS02/Limeworth",
+    image: "/projects/limeworth.png",
+    featured: true
+  },
+  {
+    title: "PvP Library Rankings",
+    description: "Pokemon GO PvP ranking generator with multiple API integrations for competitive player statistics and battle analysis.",
+    tech: ["JavaScript", "Multiple APIs", "Data Visualization"],
+    liveLink: "https://aymens02.github.io/pvpoke-rankings-generator/",
+    githubLink: "https://github.com/AymenS02/pvpoke-rankings-generator",
+    image: "/projects/poke-rank.png"
+  },
+  {
+    title: "Hamad's Portfolio Website",
+    description: "Creative portfolio website featuring smooth GSAP animations, modern design, and interactive user experience.",
+    tech: ["React", "GSAP", "CSS Animations", "Portfolio Design"],
+    liveLink: "https://aymens02.github.io/Hamads-Website/",
+    githubLink: "https://github.com/AymenS02/Hamads-Website",
+    image: "/projects/hamad.png"
+  },
+  {
+    title: "Pokemon Memory Game",
+    description: "Interactive memory card game built with React, featuring Pokemon characters, score tracking, and responsive gameplay.",
+    tech: ["React", "Game Logic", "State Management", "CSS"],
+    liveLink: "https://poke-card-game-qwrrvokam-aymen-shoteris-projects.vercel.app/",
+    githubLink: "https://github.com/AymenS02/Pokemon-Memory-Game",
+    image: "/projects/poke-game.png"
+  },
+  {
+    title: "Solar System Graphics",
+    description: "3D solar system simulation with realistic planet movements, textures, and orbital mechanics using C++ and OpenGL.",
+    tech: ["C++", "OpenGL", "3D Graphics", "Physics Simulation"],
+    githubLink: "https://github.com/AymenS02/Solar-System",
+    image: "/projects/solarsystem.gif"
+  },
+  {
+    title: "Connect 4 with AI",
+    description: "Classic Connect 4 game featuring an intelligent AI opponent with minimax algorithm and difficulty levels.",
+    tech: ["Python", "AI Algorithm", "Minimax", "Game Development"],
+    githubLink: "https://github.com/AymenS02/Connect-4-Game",
+    image: "/projects/connect4.png"
+  },
+  {
+    title: "Scammer Penalty System",
+    description: "Python-based system for detecting and penalizing scammer activities with automated reporting features.",
+    tech: ["Python", "Automation", "Data Processing", "Security"],
+    githubLink: "https://github.com/AymenS02/Scammer-Penalty",
+    image: "/projects/scammer.webp"
+  },
+  {
+    title: "Ex-Personal Portfolio",
+    description: "Previous iteration of personal portfolio showcasing earlier work and design evolution.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    liveLink: "https://aymens02.github.io/AymenShoteri.github.io/",
+    githubLink: "https://github.com/AymenS02/AymenShoteri.github.io",
+    image: "/projects/personalPort.png"
   }
 ];
+
 
 const tabContent = {
   experience: (
@@ -188,7 +354,7 @@ const tabContent = {
               <div className="relative">
                 <img
                   src={exp.image}
-                  className="w-36 h-36 lg:w-36 lg:h-36 rounded-sm object-cover "
+                  className="w-36 h-auto lg:w-36 lg:h-auto rounded-sm object-fit "
                   alt="Aymen Shoteri"
                 />
               </div>
@@ -231,14 +397,14 @@ const tabContent = {
     </div>
   ),
   skills: (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
       {skills.map((skillGroup, index) => (
-        <div key={index} className="bg-accent rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-primary">
+        <div key={index} className="bg-accent rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-primary h-full flex flex-col">
           <h3 className="text-lg font-bold text-white text-shadow-sm/10 mb-4 flex items-center">
             <div className="w-3 h-3 bg-gradient-to-r from-primary to-secondary rounded-full mr-3"></div>
             {skillGroup.category}
           </h3>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mt-auto">
             {skillGroup.items.map((skill, skillIndex) => (
               <span 
                 key={skillIndex}
@@ -252,32 +418,78 @@ const tabContent = {
       ))}
     </div>
   ),
-  projects: (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {projects.map((project, index) => (
-        <div key={index} className="bg-accent rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-primary group">
-          <div className="flex items-start justify-between mb-4">
-            <h3 className="text-lg font-bold text-white text-shadow-sm/10 group-hover:text-primary transition-colors duration-200">
-              {project.title}
-            </h3>
-            <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-primary transition-colors duration-200" />
-          </div>
-          <p className="text-gray-600 mb-4 leading-relaxed">{project.description}</p>
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.tech.map((tech, techIndex) => (
-              <span 
-                key={techIndex}
-                className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-          <div className="text-sm text-gray-500">
-            Visit my <a href="#" className="text-primary hover:underline font-medium">GitHub</a> to explore more projects
-          </div>
+ projects: (
+    <div className="space-y-8">
+      {/* Featured Projects */}
+      <div className="mb-8">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <div key={index} className="bg-accent rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-500 group overflow-hidden">
+              <div className="mb-4 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <div className="flex items-start justify-between mb-4">
+                  <h4 className="text-lg font-bold text-white text-shadow-sm/10">
+                    {project.title}
+                  </h4>
+                  <div className="flex gap-2">
+                    {project.liveLink && (
+                      <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-primary transition-colors duration-200" />
+                      </a>
+                    )}
+                    {project.githubLink && (
+                      <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-5 h-5 text-gray-500 " />
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <p className="text-gray-500 mb-4 leading-relaxed text-sm">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map((tech, techIndex) => (
+                    <span 
+                      key={techIndex}
+                      className="px-2 py-1 bg-gradient-to-r from-orange-50 to-gray-50 text-primary rounded text-xs font-medium border-orange-200 hover:from-orange-100 hover:to-gray-200 transition-colors duration-200"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-3 text-sm">
+                  {project.liveLink && (
+                    <a 
+                      href={project.liveLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-accent hover:underline font-medium flex items-center gap-1"
+                    >
+                      <ExternalLink className="w-3 h-3" />
+                      Live Demo
+                    </a>
+                  )}
+                  {project.githubLink && (
+                    <a 
+                      href={project.githubLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-accent hover:underline font-medium flex items-center gap-1"
+                    >
+                      <Github className="w-3 h-3" />
+                      GitHub
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   ),
   about: (
@@ -386,12 +598,12 @@ export default function Experience() {
     <div className="min-h-screen">
       <div className="w-full flex flex-col items-center pt-20 px-4 space-y-10">
         {/* Tab Buttons */}
-        <div className="flex flex-wrap justify-center gap-2 bg-secondary p-2 rounded-2xl shadow-lg border border-primary">
+        <div className="flex flex-wrap justify-center gap-2 bg-secondary p-0.5 rounded-2xl shadow-lg border border-primary">
           {tabs.map((tab, idx) => (
           <button
             key={tab.id}
             onClick={() => changeTab(idx)}
-            className={`relative px-5 py-4 text-sm font-medium rounded-full transition-all duration-300 ease-in-out z-20 group
+            className={`relative px-6 py-4 text-sm font-medium rounded-full transition-all duration-300 ease-in-out z-20 group
               ${activeTab === tab.id ? "text-white" : "text-white hover:scale-115"}`}
           >
             {activeTab === tab.id && (
