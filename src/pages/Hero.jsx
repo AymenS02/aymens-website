@@ -1,4 +1,4 @@
-import Experience from "./Experience.jsx";
+import Catalog from "../components/Catalog.jsx";
 
 const Hero = () => {
   return (
@@ -38,7 +38,7 @@ const Hero = () => {
       </div>
 
       {/* Experience Section */}
-      <Experience />
+      <Catalog />
 
     </div>
   );
