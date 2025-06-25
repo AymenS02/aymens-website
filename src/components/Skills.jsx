@@ -3,7 +3,7 @@ import { skills } from "../data/skills";
 
 export default function Skills() {
   return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch max-lg:mx-4">
+    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch max-lg:mx-4 font-basic">
       {skills.map((skillGroup, idx) => (
         <div
           key={idx}

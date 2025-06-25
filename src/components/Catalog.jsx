@@ -48,7 +48,7 @@ export default function Catalog() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen font-basic">
       <div className="w-full flex flex-col items-center pt-20 space-y-10">
         {/* Tab Buttons */}
         <Tabs tabs={tabs} activeTab={activeTab} onChange={changeTab} />

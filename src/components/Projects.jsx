@@ -4,7 +4,7 @@ import { ExternalLink, Github } from "lucide-react";
 
 export default function Projects() {
   return (
-    <div className="w-full">
+    <div className="w-full font-basic">
       <div className="mb-8">
         <div className="flex items-start justify-center gap-4 flex-wrap">
           {projects.map((project, idx) => (
@@ -42,7 +42,7 @@ export default function Projects() {
                   {project.tech.map((tech, techIdx) => (
                     <span
                       key={techIdx}
-                      className="px-2 py-1 bg-gradient-to-r from-orange-50 to-gray-50 text-primary rounded text-xs font-medium border-orange-200 hover:from-orange-100 hover:to-gray-200 transition-colors duration-200"
+                      className="px-2 py-1 bg-gradient-to-r from-orange-50 to-gray-50 text-primary rounded text-xs border-orange-200 hover:from-orange-100 hover:to-gray-200 transition-colors duration-200"
                     >
                       {tech}
                     </span>
@@ -54,7 +54,7 @@ export default function Projects() {
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-accent hover:underline font-medium flex items-center gap-1"
+                      className="text-accent hover:underline flex items-center gap-1"
                     >
                       <ExternalLink className="w-3 h-3" />
                       Live Demo
@@ -65,7 +65,7 @@ export default function Projects() {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-accent hover:underline font-medium flex items-center gap-1"
+                      className="text-accent hover:underline flex items-center gap-1"
                     >
                       <Github className="w-3 h-3" />
                       GitHub

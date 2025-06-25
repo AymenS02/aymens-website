@@ -13,7 +13,7 @@ export default function Experience() {
   return (
     <div className="space-y-8">
       {experiences.map((exp, idx) => (
-        <div key={idx} className="bg-accent rounded-2xl shadow-2xl border border-primary overflow-hidden max-lg:mx-4">
+        <div key={idx} className="bg-accent rounded-2xl shadow-2xl border border-primary overflow-hidden max-lg:mx-4 font-basic">
           <div className="lg:flex">
             <div className="lg:w-1/4 bg-gradient-to-b lg:bg-gradient-to-r from-primary to-accent p-8 flex items-center justify-center">
               <img

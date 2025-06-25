@@ -3,7 +3,7 @@ import { Mail, Linkedin, Github } from "lucide-react";
 
 export default function Contact() {
   return (
-    <div className="bg-accent rounded-2xl p-8 shadow-lg border border-primary max-lg:mx-4">
+    <div className="bg-accent rounded-2xl p-8 shadow-lg border border-primary max-lg:mx-4 font-basic">
       <h2 className="text-2xl font-bold text-white text-shadow-sm/10 mb-6 text-center">Get In Touch</h2>
       <div className="grid gap-6 md:grid-cols-3">
         <a

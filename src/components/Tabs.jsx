@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Tabs({ tabs, activeTab, onChange }) {
   return (
-    <div className="flex flex-wrap justify-center gap-2 p-2 bg-secondary rounded-2xl shadow-lg border border-primary mx-4">
+    <div className="sticky top-2 z-50 flex flex-wrap justify-center gap-2 p-2 bg-secondary rounded-2xl shadow-lg border border-primary mx-4">
       {tabs.map((tab, idx) => (
         <button
           key={tab.id}

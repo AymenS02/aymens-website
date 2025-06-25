@@ -3,7 +3,7 @@ import { MapPin, Calendar } from "lucide-react";
 
 export default function About() {
   return (
-    <div className="bg-accent rounded-2xl p-8 shadow-lg border border-primary max-lg:mx-4">
+    <div className="bg-accent rounded-2xl p-8 shadow-lg border border-primary max-lg:mx-4 font-basic">
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
         <div className="flex-shrink-0">
           <img
