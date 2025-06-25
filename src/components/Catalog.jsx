@@ -49,7 +49,7 @@ export default function Catalog() {
 
   return (
     <div className="min-h-screen">
-      <div className="w-full flex flex-col items-center pt-20 px-4 space-y-10">
+      <div className="w-full flex flex-col items-center pt-20 space-y-10">
         {/* Tab Buttons */}
         <Tabs tabs={tabs} activeTab={activeTab} onChange={changeTab} />
 
@@ -63,7 +63,7 @@ export default function Catalog() {
               initial="enter"
               animate="center"
               exit="exit"
-              className="w-full p-6 rounded-2xl"
+              className="w-full py-6 rounded-2xl"
             >
               {tabContent[activeTab]}
             </motion.div>

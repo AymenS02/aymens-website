@@ -3,7 +3,7 @@ import { skills } from "../data/skills";
 
 export default function Skills() {
   return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch max-lg:mx-4">
       {skills.map((skillGroup, idx) => (
         <div
           key={idx}
@@ -13,7 +13,7 @@ export default function Skills() {
             <div className="w-3 h-3 bg-gradient-to-r from-primary to-secondary rounded-full mr-3"></div>
             {skillGroup.category}
           </h3>
-          <div className="flex flex-wrap gap-2 mt-auto">
+          <div className="flex flex-wrap gap-2">
             {skillGroup.items.map((skill, skillIdx) => (
               <span
                 key={skillIdx}

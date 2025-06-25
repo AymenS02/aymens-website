@@ -12,7 +12,7 @@ const App = () => {
         <Link to="/contact">Contact</Link>
       </nav> */}
 
-      <div className="flex justify-center mx-auto my-[5vh] min-h-[80vh] lg:w-[1000px]">
+      <div className="flex justify-center mx-auto my-[10vh] min-h-[80vh] lg:w-[1000px]">
         <Routes>
           <Route path="/" element={<Hero />} />
         </Routes>

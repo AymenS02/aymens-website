@@ -13,7 +13,7 @@ export default function Experience() {
   return (
     <div className="space-y-8">
       {experiences.map((exp, idx) => (
-        <div key={idx} className="bg-accent rounded-2xl shadow-2xl border border-primary overflow-hidden">
+        <div key={idx} className="bg-accent rounded-2xl shadow-2xl border border-primary overflow-hidden max-lg:mx-4">
           <div className="lg:flex">
             <div className="lg:w-1/4 bg-gradient-to-b lg:bg-gradient-to-r from-primary to-accent p-8 flex items-center justify-center">
               <img
@@ -23,7 +23,7 @@ export default function Experience() {
               />
             </div>
             <div className="lg:w-3/4 p-6 lg:p-8">
-              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+              <div className="flex flex-col items-center max-lg:text-center lg:flex-row lg:items-start lg:justify-between mb-6">
                 <div>
                   <h2 className="text-xl lg:text-2xl font-bold text-white mb-2">{exp.company}</h2>
                   <p className="text-base lg:text-lg text-primary font-semibold mb-3">{exp.role}</p>

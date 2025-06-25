@@ -4,13 +4,13 @@ import { ExternalLink, Github } from "lucide-react";
 
 export default function Projects() {
   return (
-    <div className="space-y-8">
+    <div className="w-full">
       <div className="mb-8">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="flex items-start justify-center gap-4 flex-wrap">
           {projects.map((project, idx) => (
             <div
               key={idx}
-              className="bg-accent rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-500 group overflow-hidden"
+              className="bg-accent w-[300px] h-[500px] my-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-500 group overflow-hidden"
             >
               <div className="mb-4 overflow-hidden">
                 <img
