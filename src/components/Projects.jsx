@@ -2,12 +2,22 @@ import React from "react";
 import { projects } from "../data/projects";
 import { ExternalLink, Github } from "lucide-react";
 
-export default function Projects() {
+export default function Projects({ activeCategory }) {
+  // Filter projects based on the selected category tab
+  const filteredProjects =
+    activeCategory === "all"
+      ? projects
+      : projects.filter((project) =>
+          Array.isArray(project.category)
+            ? project.category.includes(activeCategory)
+            : project.category === activeCategory
+        );
+
   return (
     <div className="w-full font-basic">
       <div className="mb-8">
         <div className="flex items-start justify-center gap-4 flex-wrap">
-          {projects.map((project, idx) => (
+          {filteredProjects.map((project, idx) => (
             <div
               key={idx}
               className="bg-accent w-[300px] h-[500px] my-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-500 group overflow-hidden"
@@ -76,6 +86,9 @@ export default function Projects() {
             </div>
           ))}
         </div>
+        {filteredProjects.length === 0 && (
+          <p className="text-center text-gray-400 mt-10">No projects found for this category.</p>
+        )}
       </div>
     </div>
   );
