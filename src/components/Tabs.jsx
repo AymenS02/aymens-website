@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 
 export default function Tabs({ tabs, activeTab, onChange }) {
   return (
-    <div className="sticky top-2 z-50 flex flex-wrap justify-center gap-2 p-2 bg-secondary rounded-2xl shadow-lg border border-primary mx-4">
+    <div className="sticky top-2 z-50 flex flex-wrap justify-center gap-2 p-2 bg-accent rounded-2xl shadow-lg border border-primary mx-4">
       {tabs.map((tab, idx) => (
         <button
           key={tab.id}
           onClick={() => onChange(idx)}
           className={`relative px-5 py-3 text-sm font-medium rounded-full transition-all duration-300 ease-in-out z-20 group
-            ${activeTab === tab.id ? "text-white" : "text-white hover:scale-115"}`}
+            ${activeTab === tab.id ? "text-white text-shadow-sm/10" : "text-white hover:scale-115"}`}
         >
           {activeTab === tab.id && (
             <motion.span
