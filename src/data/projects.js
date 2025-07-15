@@ -1,8 +1,28 @@
 export const projects = [
   {
+    title: "Tanhar's Consulting",
+    description: "Production website for Tanhar's Consulting with a contact booking system, framer motion animations, and optimized performance for high traffic.",
+    tech: ["React", "Tailwind CSS", "Framer-Motion", "Backend Integration"],
+    liveLink: "https://tanhars-website.vercel.app/",
+    githubLink: "https://github.com/AymenS02/Tanhars-Website",
+    image: "/projects/tanhar.png",
+    category: "production",
+    featured: true
+  },
+  {
+  title: "Portfolio Website Concept",
+  description: "Ex-Portfolio website designed using Tailwind CSS and Framer Motion, showcasing my skills and projects. With mobile compatibility and smooth animations.",
+  tech: ["React", "Tailwind CSS", "Framer-Motion", "Mobile Compatibility"],
+  liveLink: "https://portfolio-website-2-0-aymen-shoteris-projects.vercel.app/",
+  githubLink: "https://github.com/AymenS02/Portfolio-Website-2.0",
+  image: "/projects/personalPort2.png",
+  category: "production",
+  featured: true
+  },
+  {
     title: "R2R Company Website",
-    description: "Production website for Road 2 Righteousness with advanced booking system, GSAP animations, and optimized performance for high traffic.",
-    tech: ["React", "Tailwind CSS", "GSAP", "Backend Integration"],
+    description: "Production website for Road 2 Righteousness with a contact booking system, framer motion animations, and optimized performance for high traffic.",
+    tech: ["React", "Tailwind CSS", "Framer-Motion", "Backend Integration"],
     liveLink: "https://www.road2righteousness.ca/",
     githubLink: "https://github.com/AymenS02/R2R",
     image: "/projects/r2rpage.png",
@@ -45,7 +65,7 @@ export const projects = [
     liveLink: "https://aymens02.github.io/Hamads-Website/",
     githubLink: "https://github.com/AymenS02/Hamads-Website",
     image: "/projects/hamad.png",
-    category: "portfolio"
+    category: "production"
   },
   {
     title: "Pokemon Memory Game",
@@ -87,6 +107,6 @@ export const projects = [
     liveLink: "https://aymens02.github.io/AymenShoteri.github.io/",
     githubLink: "https://github.com/AymenS02/AymenShoteri.github.io",
     image: "/projects/personalPort.png",
-    category: "portfolio"
+    category: "production"
   }
 ];

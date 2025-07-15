@@ -16,7 +16,7 @@ export default function Projects({ activeCategory }) {
   return (
     <div className="w-full font-basic">
       <div className="mb-8">
-        <div className="flex items-start justify-center gap-4 flex-wrap">
+        <div className="flex items-start justify-evenly gap-4 flex-wrap">
           {filteredProjects.map((project, idx) => (
             <div
               key={idx}
