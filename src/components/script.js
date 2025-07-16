@@ -29,49 +29,6 @@ const renderer = new THREE.WebGLRenderer({ antialias: true });
 
 let gradientCanvas = null;
 
-function initBackground(canvasElement) {
-    try {
-        gradientCanvas = canvasElement || document.querySelector("#gradient-canvas");
-        if (!gradientCanvas) {
-            console.error("Canvas element not found");
-            return;
-        }
-        
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        
-        // Replace the canvas with the renderer's canvas
-        const parent = gradientCanvas.parentElement;
-        if (parent) {
-            parent.replaceChild(renderer.domElement, gradientCanvas);
-            gradientCanvas = renderer.domElement;
-            gradientCanvas.id = "gradient-canvas";
-            gradientCanvas.className = "fixed top-0 left-0 w-full h-full -z-10";
-        }
-        
-        // Initialize the render targets
-        fluidTarget1.setSize(window.innerWidth, window.innerHeight);
-        fluidTarget2.setSize(window.innerWidth, window.innerHeight);
-        
-        // Attach mouse event listeners to the canvas element
-        attachMouseListeners();
-        
-        // Start the animation loop
-        if (!animationStarted) {
-            animate();
-        }
-    } catch (error) {
-        console.error("Error initializing background:", error);
-    }
-}
-
-// If running in browser environment without React
-if (typeof window !== 'undefined' && !gradientCanvas) {
-    gradientCanvas = document.querySelector("#gradient-canvas");
-    if (gradientCanvas) {
-        initBackground(gradientCanvas);
-    }
-}
-
 
 const fluidTarget1 = new THREE.WebGLRenderTarget(
     window.innerWidth,
@@ -146,28 +103,39 @@ let lastMoveTime = 0;
 function attachMouseListeners() {
     if (!gradientCanvas) return;
     
+    console.log("Attaching mouse listeners to canvas:", gradientCanvas);
+    
+    // Make sure canvas can receive mouse events
+    gradientCanvas.style.pointerEvents = 'auto';
+    gradientCanvas.style.zIndex = '1';
+    
     gradientCanvas.addEventListener("mousemove", (e) => {
         const rect = gradientCanvas.getBoundingClientRect();
         prevMouseX = mouseX;
         prevMouseY = mouseY;
         mouseX = e.clientX - rect.left;
-        mouseY = rect.height - (e.clientY - rect.top); // Flip Y axis for WebGL coordinate system
+        mouseY = rect.height - (e.clientY - rect.top); // Flip Y axis for WebGL
         lastMoveTime = performance.now();
-        
-        // Always update mouse position when moving (no click required)
+
         fluidMaterial.uniforms.iMouse.value.set(
             mouseX,
             mouseY,
             prevMouseX,
             prevMouseY
         );
-        
-        // Debug logging
-        console.log("Mouse:", mouseX.toFixed(1), mouseY.toFixed(1), "Prev:", prevMouseX.toFixed(1), prevMouseY.toFixed(1));
+
+        console.log("Mouse move:", mouseX, mouseY);
+    });
+
+    gradientCanvas.addEventListener("mouseenter", () => {
+        console.log("Mouse entered canvas");
     });
 
     gradientCanvas.addEventListener("mouseleave", () => {
-        fluidMaterial.uniforms.iMouse.value.set(0, 0, 0, 0);
+        // Don't reset mouse position to 0,0 - this would cause issues
+        // Instead, just stop updating the previous position
+        const current = fluidMaterial.uniforms.iMouse.value;
+        fluidMaterial.uniforms.iMouse.value.set(current.x, current.y, current.x, current.y);
         console.log("Mouse left canvas");
     });
 }
@@ -188,8 +156,11 @@ function animate() {
     displayMaterial.uniforms.iTime.value = time;
     fluidMaterial.uniforms.iFrame.value = frameCount;
 
-    if (performance.now() - lastMoveTime > 100) { 
-        fluidMaterial.uniforms.iMouse.value.set(0, 0, 0, 0);
+    // Reduce the mouse velocity decay timeout to make it more responsive
+    if (performance.now() - lastMoveTime > 50) {
+        const prev = fluidMaterial.uniforms.iMouse.value;
+        // Gradually reduce velocity instead of stopping it abruptly
+        fluidMaterial.uniforms.iMouse.value.set(prev.x, prev.y, prev.x * 0.95, prev.y * 0.95);
     }
 
     fluidMaterial.uniforms.uBrushSize.value = config.brushSize;
@@ -234,6 +205,55 @@ window.addEventListener("resize", () => {
     fluidTarget2.setSize(width, height);
     frameCount = 0;
 });
+
+function initBackground(canvasElement) {
+    try {
+        gradientCanvas = canvasElement || document.querySelector("#gradient-canvas");
+        if (!gradientCanvas) {
+            console.error("Canvas element not found");
+            return;
+        }
+
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        // Replace the canvas with the renderer's canvas
+        const parent = gradientCanvas.parentElement;
+        if (parent) {
+            parent.replaceChild(renderer.domElement, gradientCanvas);
+            gradientCanvas = renderer.domElement; // ✅ update reference
+            gradientCanvas.id = "gradient-canvas";
+            gradientCanvas.className = "fixed top-0 left-0 w-full h-full -z-10";
+
+            console.log("✅ Canvas replaced with renderer.domElement");
+            console.log("✅ gradientCanvas now points to:", gradientCanvas);
+        }
+
+        // Initialize render targets
+        fluidTarget1.setSize(window.innerWidth, window.innerHeight);
+        fluidTarget2.setSize(window.innerWidth, window.innerHeight);
+
+        // Attach listeners to the *updated* canvas
+        attachMouseListeners();
+
+        console.log("✅ Mouse listeners attached to:", gradientCanvas);
+
+        // Start animation loop
+        if (!animationStarted) {
+            animate();
+        }
+    } catch (error) {
+        console.error("Error initializing background:", error);
+    }
+}
+
+// If running in browser environment without React
+if (typeof window !== 'undefined' && !gradientCanvas) {
+    gradientCanvas = document.querySelector("#gradient-canvas");
+    if (gradientCanvas) {
+        initBackground(gradientCanvas);
+    }
+}
+
 
 // Export the initialization function
 export { initBackground };

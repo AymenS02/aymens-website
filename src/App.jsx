@@ -28,12 +28,13 @@ const App = () => {
       {/* Background canvas */}
       <canvas
         ref={canvasRef}
-        className="fixed top-0 left-0 w-full h-full -z-10"
+        className="fixed top-0 left-0 w-full h-full"
+        style={{ zIndex: 1, pointerEvents: 'auto' }}
         id="gradient-canvas"
       />
       
       {/* Content */}
-      <div className="flex justify-center mx-auto my-[10vh] min-h-[80vh] lg:w-[1000px] relative z-10">
+      <div className="flex justify-center mx-auto my-[10vh] min-h-[80vh] lg:w-[1000px] relative" style={{ zIndex: 10 }}>
         <Routes>
           <Route path="/" element={<Hero />} />
         </Routes>
