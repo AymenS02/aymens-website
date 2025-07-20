@@ -70,7 +70,7 @@ const Hero = () => {
         
         <div className="flex items-center justify-center m-2 p-[2px] bg-primary border-2 border-secondary rounded-xl shadow-2xl max-lg:mt-10">
           <img
-            src="./aymen.png"
+            src="./aymen1.jpg"
             className="max-h-[25vh] rounded-xl border-2 border-black object-contain"
             alt="Aymen Shoteri"
           />
