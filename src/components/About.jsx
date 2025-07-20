@@ -7,7 +7,7 @@ export default function About() {
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8">
         <div className="flex-shrink-0">
           <img
-            src="./aymen.png"
+            src="./aymen_about.png"
             className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow-lg"
             alt="Aymen Shoteri"
           />
