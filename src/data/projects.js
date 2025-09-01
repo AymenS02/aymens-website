@@ -3,7 +3,7 @@ export const projects = [
     title: "MAH Marriage Matrimony",
     description: "Production website for MAH Marriage Matrimony with a contact booking system, admin portal, and optimized performance for high traffic.",
     tech: ["NextJS", "React", "MongoDB", "API/Backend Integration"],
-    liveLink: "https://mah-marriage-website.vercel.app/",
+    liveLink: "https://halalhearts.vercel.app/",
     githubLink: "https://github.com/AymenS02/MAH-marriage-website",
     image: "/projects/mah.png",
     category: "production",
