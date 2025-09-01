@@ -43,7 +43,7 @@ export const projects = [
     title: "Crypto Tracker App",
     description: "Real-time cryptocurrency tracking application with live price updates, charts, and market data visualization.",
     tech: ["React", "API Integration", "Chart.js", "CSS"],
-    liveLink: "https://aymens02.github.io/Crypto-Tracker/",
+    liveLink: "https://crypto-tracker-swart-eight.vercel.app/",
     githubLink: "https://github.com/AymenS02/Crypto-Tracker",
     image: "/projects/cointracker.png",
     category: "data",
