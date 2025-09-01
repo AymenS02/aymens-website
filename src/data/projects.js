@@ -1,5 +1,36 @@
+
 export const projects = [
-    {
+  {
+    title: "Battery Thermal Management Simulator",
+    description: "Interactive simulation of battery pack thermal regulation using PID control with real-time visualization of temperature management and cooling systems.",
+    tech: ["React", "Recharts", "Python", "PID Control", "Data Visualization"],
+    liveLink: "https://battery-thermal-management-simulato.vercel.app/",
+    githubLink: "https://github.com/AymenS02/Battery-Thermal-Management-Simulator",
+    image: "/projects/battery-simulator.png",
+    category: "simulations",
+    featured: true
+  },
+  { 
+    title: "Fitrah Foundation Course Platform [UNDER CONTSTRUCTION]",
+    description: "E-learning platform for Fitrah Foundation offering interactive courses, quizzes, and progress tracking for students.",
+    tech: ["NextJS", "React", "MongoDB", "API/Backend Integration"],
+    liveLink: "https://fitrah-foundation.vercel.app/",
+    githubLink: "https://github.com/AymenS02/Fitrah-Foundation",
+    image: "/projects/fitrah.png",
+    category: "production",
+    featured: true
+  },
+  {
+    title: "Ar-Ribat Education Website",
+    description: "Production website for Ar-Ribat Education with a contact booking system, admin portal, and optimized performance for high traffic.",
+    tech: ["NextJS", "React", "MongoDB", "API/Backend Integration"],
+    liveLink: "https://ar-ribat.vercel.app/",
+    githubLink: "https://github.com/AymenS02/Ar-Ribat",
+    image: "/projects/ar-ribat.png",
+    category: "production",
+    featured: true
+  },
+  {
     title: "MAH Marriage Matrimony",
     description: "Production website for MAH Marriage Matrimony with a contact booking system, admin portal, and optimized performance for high traffic.",
     tech: ["NextJS", "React", "MongoDB", "API/Backend Integration"],
@@ -84,7 +115,7 @@ export const projects = [
     liveLink: "https://poke-card-game-qwrrvokam-aymen-shoteris-projects.vercel.app/",
     githubLink: "https://github.com/AymenS02/Pokemon-Memory-Game",
     image: "/projects/poke-game.png",
-    category: "games"
+    category: "simulations"
   },
   {
     title: "Solar System Graphics",
@@ -100,7 +131,7 @@ export const projects = [
     tech: ["Python", "AI Algorithm", "Minimax", "Game Development"],
     githubLink: "https://github.com/AymenS02/Connect-4-Game",
     image: "/projects/connect4.png",
-    category: "games"
+    category: "simulations"
   },
   {
     title: "Scammer Penalty System",
