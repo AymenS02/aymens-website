@@ -3,7 +3,7 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #B85042;
+    --color-primary: #F9FADA;
     --color-secondary: #5D7B6F;
     --color-accent: #A7BEAE;
     --color-background: #E7E8D1;
@@ -23,4 +23,8 @@
 
     --font-basic:'Orienta', 'sans-serif';
     --font-title:'Palanquin Dark', 'sans-serif';
+}
+
+* {
+  color: #424409 !important;
 }
