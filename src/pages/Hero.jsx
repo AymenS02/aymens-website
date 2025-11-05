@@ -28,7 +28,7 @@ const Hero = () => {
                 href="/ShoteriAresume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-primary text-white font-title px-5 py-2.5 rounded-lg border-2 border-secondary hover:bg-[#83392f] transition-colors duration-300 shadow-sm"
+                className="bg-primary text-white font-title px-5 py-2.5 rounded-lg border-2 border-secondary hover:bg-accent transition-colors duration-300 shadow-sm"
               >
                 Resume
               </a>

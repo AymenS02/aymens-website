@@ -1,6 +1,46 @@
 
 export const projects = [
   {
+    title: "FloralCare Cleaning Services Website",
+    description: "A front-end website for FloralCare to manage and showcase their cleaning services.",
+    tech: ["React", "GSAP", "Tailwind CSS"],
+    liveLink: "https://floralcare.vercel.app/",
+    githubLink: "https://github.com/AymenS02/floralcare",
+    image: "/projects/floral.png",
+    category: "production",
+    featured: true
+  },
+  {
+    title: "MAH Youth Events/Programs Website",
+    description: "A full stack website for MAH Youth to manage and showcase various events and programs for youth engagement.",
+    tech: ["React", "Node.js", "MongoDB", "GSAP"],
+    liveLink: "https://mah-youth.vercel.app/",
+    githubLink: "https://github.com/AymenS02/mah-youth",
+    image: "/projects/mahyouth.png",
+    category: "production",
+    featured: true
+  },
+  {
+    title: "Arabic Learning Platform",
+    description: "A comprehensive platform for learning Arabic with interactive lessons, quizzes, and progress tracking.",
+    tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+    liveLink: "https://markaz-umaza.vercel.app/",
+    githubLink: "https://github.com/AymenS02/markaz-umaza",
+    image: "/projects/umaza.png",
+    category: "production",
+    featured: true
+  },
+    {
+    title: "Williams Cafe Daily Task Checklist",
+    description: "A full stack website for Williams Cafe to manage and showcase their daily tasks.",
+    tech: ["React", "Node.js", "MongoDB", "Cloudinary"],
+    liveLink: "https://williams-cafe-tasks.vercel.app/",
+    githubLink: "https://github.com/AymenS02/Williams-Cafe-Tasks",
+    image: "/projects/cafe.png",
+    category: "tools",
+    featured: true
+  },
+  {
     title: "Battery Thermal Management Simulator",
     description: "Interactive simulation of battery pack thermal regulation using PID control with real-time visualization of temperature management and cooling systems.",
     tech: ["React", "Recharts", "Python", "PID Control", "Data Visualization"],
@@ -11,7 +51,7 @@ export const projects = [
     featured: true
   },
   { 
-    title: "Fitrah Foundation Course Platform [UNDER CONTSTRUCTION]",
+    title: "Fitrah Foundation Learning Platform",
     description: "E-learning platform for Fitrah Foundation offering interactive courses, quizzes, and progress tracking for students.",
     tech: ["NextJS", "React", "MongoDB", "API/Backend Integration"],
     liveLink: "https://fitrah-foundation.vercel.app/",

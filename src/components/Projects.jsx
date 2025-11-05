@@ -20,7 +20,7 @@ export default function Projects({ activeCategory }) {
           {filteredProjects.map((project, idx) => (
             <div
               key={idx}
-              className="bg-accent w-[300px] h-[500px] my-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-500 group overflow-hidden"
+              className="bg-accent w-[300px] max-h-[600px] my-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-orange-500 group overflow-hidden"
             >
               <div className="mb-4 overflow-hidden">
                 <img
@@ -37,12 +37,12 @@ export default function Projects({ activeCategory }) {
                   <div className="flex gap-2">
                     {project.liveLink && (
                       <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-primary transition-colors duration-200" />
+                        <ExternalLink className="w-5 h-5 text-gray-500 group-hover:text-primary transition-colors duration-200 hover:scale-115" />
                       </a>
                     )}
                     {project.githubLink && (
                       <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-5 h-5 text-gray-500" />
+                        <Github className="w-5 h-5 text-gray-500 group-hover:text-primary transition-colors duration-200 hover:scale-115" />
                       </a>
                     )}
                   </div>
@@ -58,7 +58,7 @@ export default function Projects({ activeCategory }) {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-3 text-sm">
+                {/* <div className="flex gap-3 text-sm">
                   {project.liveLink && (
                     <a
                       href={project.liveLink}
@@ -81,7 +81,7 @@ export default function Projects({ activeCategory }) {
                       GitHub
                     </a>
                   )}
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
