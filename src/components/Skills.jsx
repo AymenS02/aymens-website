@@ -10,7 +10,7 @@ export default function Skills() {
           className="bg-accent rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-primary h-full flex flex-col"
         >
           <h3 className="text-lg font-bold text-white text-shadow-sm/10 mb-4 flex items-center">
-            <div className="w-3 h-3 bg-gradient-to-r from-primary to-secondary rounded-full mr-3"></div>
+            <div className="w-3 h-3 bg-primary border-2 border-secondary rounded-full mr-3"></div>
             {skillGroup.category}
           </h3>
           <div className="flex flex-wrap gap-2">
