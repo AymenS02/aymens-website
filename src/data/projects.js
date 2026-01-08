@@ -104,7 +104,7 @@ export const projects = [
     title: "R2R Company Website",
     description: "Production website for Road 2 Righteousness with a contact booking system, framer motion animations, and optimized performance for high traffic.",
     tech: ["React", "Tailwind CSS", "Framer-Motion", "Backend Integration"],
-    liveLink: "https://www.road2righteousness.ca/",
+    liveLink: "https://r2r-iota.vercel.app/",
     githubLink: "https://github.com/AymenS02/R2R",
     image: "/projects/r2rpage.png",
     category: "production",
