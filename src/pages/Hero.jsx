@@ -13,13 +13,13 @@ const Hero = () => {
           <h2 className="lg:text-3xl md:text-2xl text-xl font-title">Full Stack Developer</h2>
           <div className="max-lg:flex max-lg:flex-col max-lg:items-center max-lg:justify-center leading-tight font-basic">
             <p className="lg:text-lg md:text-md text-sm mb-0 max-sm:hidden">
-              4th Year Bachelor of Science in <b>Mathematics and Computer Science</b>,
+              Bachelor of Science in <b>Mathematics and Computer Science</b>,
             </p>
             <p className="lg:text-lg md:text-md text-sm max-sm:hidden">
               <b>McMaster University</b>
             </p>
             <p className="text-sm mb-0 sm:hidden text-center mt-4">
-              4th Year Bachelor of Science in <b>Mathematics and Computer Science</b>, <b>McMaster University</b>
+              Bachelor of Science in <b>Mathematics and Computer Science</b>, <b>McMaster University</b>
             </p>
             
             <div className="flex items-center gap-4 mt-6 flex-wrap">
@@ -70,7 +70,7 @@ const Hero = () => {
         
         <div className="flex items-center justify-center m-2 p-[2px] bg-primary border-2 border-secondary rounded-xl shadow-2xl max-lg:mt-10">
           <img
-            src="./aymen1.jpg"
+            src="./img2.jpeg"
             className="max-h-[25vh] rounded-xl border-2 border-black object-contain"
             alt="Aymen Shoteri"
           />

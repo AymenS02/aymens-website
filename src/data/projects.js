@@ -1,6 +1,16 @@
 
 export const projects = [
   {
+    title: "Dawah Digital Library",
+    description: "A comprehensive digital library for Islamic resources, including books, articles, and multimedia content.",
+    tech: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+    liveLink: "https://dawah-digital-library.vercel.app/",
+    githubLink: "https://github.com/AymenS02/dawah-digital-library",
+    image: "/projects/dawah.png",
+    category: "production",
+    featured: true
+  },
+  {
     title: "FloralCare Cleaning Services Website",
     description: "A front-end website for FloralCare to manage and showcase their cleaning services.",
     tech: ["React", "GSAP", "Tailwind CSS"],
