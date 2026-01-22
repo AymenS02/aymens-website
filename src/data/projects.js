@@ -162,7 +162,7 @@ export const projects = [
     title: "Pokemon Memory Game",
     description: "Interactive memory card game built with React, featuring Pokemon characters, score tracking, and responsive gameplay.",
     tech: ["React", "Game Logic", "State Management", "CSS"],
-    liveLink: "https://poke-card-game-qwrrvokam-aymen-shoteris-projects.vercel.app/",
+    liveLink: "https://poke-card-game-five.vercel.app/",
     githubLink: "https://github.com/AymenS02/Pokemon-Memory-Game",
     image: "/projects/poke-game.png",
     category: "simulations"
