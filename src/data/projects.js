@@ -1,5 +1,16 @@
 
 export const projects = [
+
+  {
+    title: "X-ray Waitlist Management System",
+    description: "A comprehensive system for managing X-ray waitlists, including patient information, SMS messaging, and real-time status updates.",
+    tech: ["React", "Node.js", "MongoDB", "Typescript"],
+    liveLink: "https://x-ray-waitlist.vercel.app/status",
+    githubLink: "https://github.com/AymenS02/X-ray-Waitlist",
+    image: "/projects/xrayexample.png",
+    category: "production",
+    featured: true
+  },
   {
     title: "Dawah Digital Library",
     description: "A comprehensive digital library for Islamic resources, including books, articles, and multimedia content.",
