@@ -1,6 +1,16 @@
 
 export const projects = [
-
+  {
+    title: "Khans Food — Catering & Pickup Platform",
+    description:
+      "A production-ready food ordering and catering platform with online payments, pickup scheduling, custom catering requests, customer accounts, and a full admin management system.",
+    tech: ["Next.js", "TypeScript", "MongoDB", "Stripe"],
+    liveLink: "https://khans-food.vercel.app/",
+    githubLink: "https://github.com/AymenS02/Khans-Food",
+    image: "/projects/khans-food.png",
+    category: "production",
+    featured: true
+  },
   {
     title: "X-ray Waitlist Management System",
     description: "A comprehensive system for managing X-ray waitlists, including patient information, SMS messaging, and real-time status updates.",
