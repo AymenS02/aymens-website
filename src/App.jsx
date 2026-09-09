@@ -1,6 +1,7 @@
 import React from 'react'
 import HeroTitle from './components/HeroTitle'
 import HeroSubtitle from './components/HeroSubtitle'
+import HeroCard from './components/HeroCard'
 
 const App = () => {
   return (
@@ -8,9 +9,12 @@ const App = () => {
 
       {/* Hero */}
       <div className="min-h-screen w-screen bg-gradient-to-b from-primary to-secondary">
-        <div className="flex h-screen w-screen flex-col items-start justify-start p-20 gap-20">
+        <div className="flex flex-col items-start justify-start p-20 gap-20">
           <HeroTitle />
-          <HeroSubtitle />
+          {/* <HeroSubtitle /> */}
+        </div>
+        <div className="absolute left-[75%] top-[50%]">
+          <HeroCard />
         </div>
       </div>
 
