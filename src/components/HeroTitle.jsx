@@ -111,7 +111,7 @@ const HeroTitle = () => {
     >
       <h1
         aria-label={TITLE}
-        className="flex flex-wrap justify-center text-center font-title text-6xl sm:text-8xl lg:text-9xl"
+        className="flex flex-wrap justify-center text-center font-fun text-6xl sm:text-8xl lg:text-9xl"
       >
         {TITLE.split("").map(
           (character, index) => (
