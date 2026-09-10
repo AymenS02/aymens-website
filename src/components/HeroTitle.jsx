@@ -10,57 +10,109 @@ const TITLE = "Aymen Shoteri";
 const HeroTitle = () => {
   const containerRef = useRef(null);
   const letterRefs = useRef([]);
+  const animationCompleteRef =
+    useRef(false);
 
   useLayoutEffect(() => {
+    animationCompleteRef.current =
+      false;
+
     const ctx = gsap.context(() => {
       const letters =
-        letterRefs.current.filter(Boolean);
+        letterRefs.current.filter(
+          Boolean
+        );
 
       gsap.set(letters, {
-        y: () => -window.innerHeight,
+        y: () =>
+          -window.innerHeight,
         opacity: 0,
         rotation: () =>
-          gsap.utils.random(-15, 15),
+          gsap.utils.random(
+            -15,
+            15
+          ),
       });
 
       gsap.to(letters, {
         y: 0,
         opacity: 1,
         rotation: 0,
-        skewX: -10,
+        skewX: -8,
         duration: 1.6,
         stagger: 0.08,
         ease: "elastic.out(1, 0.9)",
+
+        onComplete: () => {
+          animationCompleteRef.current =
+            true;
+        },
       });
     }, containerRef);
 
     return () => {
+      animationCompleteRef.current =
+        false;
+
       ctx.revert();
     };
   }, []);
 
-  const handleMouseEnter = (index) => {
+  const getAdjacentLetter = (
+    index,
+    direction
+  ) => {
+    let adjacentIndex =
+      index + direction;
+
+    // Skip spaces when looking for
+    // the neighboring visible letter.
+    while (
+      adjacentIndex >= 0 &&
+      adjacentIndex < TITLE.length &&
+      TITLE[adjacentIndex] === " "
+    ) {
+      adjacentIndex += direction;
+    }
+
+    return letterRefs.current[
+      adjacentIndex
+    ];
+  };
+
+  const handleMouseEnter = (
+    index
+  ) => {
+    if (
+      !animationCompleteRef.current
+    ) {
+      return;
+    }
+
     const currentLetter =
       letterRefs.current[index];
 
     const previousLetter =
-      letterRefs.current[index - 1];
+      getAdjacentLetter(index, -1);
 
     const nextLetter =
-      letterRefs.current[index + 1];
+      getAdjacentLetter(index, 1);
 
-    // Return to its original horizontal position
-    // while moving upward.
+    // Main hovered letter
     gsap.to(currentLetter, {
       x: 0,
-      y: -14,
-      scale: 1.12,
-      rotation: gsap.utils.random(-6, 6),
+      y: -16,
+      scale: 1.13,
+      rotation: gsap.utils.random(
+        -5,
+        5
+      ),
       duration: 0.25,
       ease: "power2.out",
       overwrite: true,
     });
 
+    // Previous letter moves left
     if (previousLetter) {
       gsap.to(previousLetter, {
         x: -12,
@@ -73,6 +125,7 @@ const HeroTitle = () => {
       });
     }
 
+    // Next letter moves right
     if (nextLetter) {
       gsap.to(nextLetter, {
         x: 12,
@@ -86,11 +139,19 @@ const HeroTitle = () => {
     }
   };
 
-  const handleMouseLeave = (index) => {
+  const handleMouseLeave = (
+    index
+  ) => {
+    if (
+      !animationCompleteRef.current
+    ) {
+      return;
+    }
+
     const affectedLetters = [
-      letterRefs.current[index - 1],
+      getAdjacentLetter(index, -1),
       letterRefs.current[index],
-      letterRefs.current[index + 1],
+      getAdjacentLetter(index, 1),
     ].filter(Boolean);
 
     gsap.to(affectedLetters, {
@@ -98,7 +159,7 @@ const HeroTitle = () => {
       y: 0,
       rotation: 0,
       scale: 1,
-      duration: 0.6,
+      duration: 0.65,
       ease: "elastic.out(1, 0.4)",
       overwrite: true,
     });
@@ -107,53 +168,131 @@ const HeroTitle = () => {
   return (
     <div
       ref={containerRef}
-      className="relative flex justify-center overflow-visible"
+      className="
+        relative
+        flex w-full
+        justify-center
+        overflow-visible
+      "
     >
       <h1
         aria-label={TITLE}
-        className="flex flex-wrap justify-center text-center font-fun text-6xl sm:text-8xl lg:text-9xl"
+        className="
+          flex whitespace-nowrap
+          text-center
+          font-fun
+          text-5xl leading-none
+          sm:text-7xl
+          md:text-8xl
+          lg:text-9xl
+        "
       >
         {TITLE.split("").map(
-          (character, index) => (
-            <span
-              key={`${character}-${index}`}
-              ref={(element) => {
-                letterRefs.current[index] =
-                  element;
-              }}
-              aria-hidden="true"
-              className="hero-letter relative inline-block cursor-default will-change-transform"
-              onMouseEnter={() =>
-                handleMouseEnter(index)
-              }
-              onMouseLeave={() =>
-                handleMouseLeave(index)
-              }
-            >
-              {character === " " ? (
-                <span className="inline-block w-[0.3em]">
-                  &nbsp;
-                </span>
-              ) : (
-                <>
-                  {/* Outer white border */}
-                  <span className="absolute inset-0 text-transparent [-webkit-text-stroke:10px_white]">
-                    {character}
-                  </span>
+          (character, index) => {
+            const isSpace =
+              character === " ";
 
-                  {/* Inner orange border */}
-                  <span className="absolute inset-0 text-transparent [-webkit-text-stroke:6px_#f97316]">
-                    {character}
+            return (
+              <span
+                key={`${character}-${index}`}
+                ref={(element) => {
+                  letterRefs.current[
+                    index
+                  ] = element;
+                }}
+                aria-hidden="true"
+                className={`
+                  hero-letter
+                  relative inline-block
+                  select-none
+                  will-change-transform
+                  ${
+                    isSpace
+                      ? ""
+                      : "cursor-pointer"
+                  }
+                `}
+                onMouseEnter={
+                  isSpace
+                    ? undefined
+                    : () =>
+                        handleMouseEnter(
+                          index
+                        )
+                }
+                onMouseLeave={
+                  isSpace
+                    ? undefined
+                    : () =>
+                        handleMouseLeave(
+                          index
+                        )
+                }
+              >
+                {isSpace ? (
+                  <span className="inline-block w-[0.28em]">
+                    &nbsp;
                   </span>
+                ) : (
+                  <>
+                    {/* Dark offset shadow */}
+                    <span
+                      className="
+                        pointer-events-none
+                        absolute inset-0
+                        translate-x-[6px]
+                        translate-y-[7px]
+                        text-transparent
+                        [-webkit-text-stroke:8px_#1e293b]
+                        sm:[-webkit-text-stroke:10px_#1e293b]
+                        lg:[-webkit-text-stroke:12px_#1e293b]
+                      "
+                    >
+                      {character}
+                    </span>
 
-                  {/* Main white letter */}
-                  <span className="relative text-white">
-                    {character}
-                  </span>
-                </>
-              )}
-            </span>
-          )
+                    {/* Outer white outline */}
+                    <span
+                      className="
+                        pointer-events-none
+                        absolute inset-0
+                        text-transparent
+                        [-webkit-text-stroke:6px_white]
+                        sm:[-webkit-text-stroke:8px_white]
+                        lg:[-webkit-text-stroke:10px_white]
+                      "
+                    >
+                      {character}
+                    </span>
+
+                    {/* Inner orange outline */}
+                    <span
+                      className="
+                        pointer-events-none
+                        absolute inset-0
+                        text-transparent
+                        [-webkit-text-stroke:3px_#f97316]
+                        sm:[-webkit-text-stroke:5px_#f97316]
+                        lg:[-webkit-text-stroke:6px_#f97316]
+                      "
+                    >
+                      {character}
+                    </span>
+
+                    {/* Main letter */}
+                    <span
+                      className="
+                        pointer-events-none
+                        relative text-white
+                      "
+                    >
+                      {character}
+                    </span>
+                  </>
+                )}
+              </span>
+            );
+          }
         )}
       </h1>
     </div>

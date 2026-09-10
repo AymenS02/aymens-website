@@ -1,8 +1,9 @@
 import React from "react";
 
 import HeroTitle from "./components/HeroTitle";
-import HeroSubtitle from "./components/HeroSubtitle";
 import HeroCard from "./components/HeroCard";
+import Icons from "./components/Icons";
+import Swirls from "./components/Swirls";
 
 const App = () => {
   return (
@@ -15,32 +16,59 @@ const App = () => {
           bg-primary
         "
       >
-        {/* Hero text */}
-        <div className="relative z-10 flex flex-col items-start gap-20 p-8 sm:p-12 lg:p-20">
-          <HeroTitle />
-
-          {/* <HeroSubtitle /> */}
+        {/* Background swirls */}
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <Swirls />
         </div>
 
-        {/* Full-screen animation stage */}
+        {/* Animated icons */}
+        <div className="absolute inset-0 z-10">
+          <Icons />
+        </div>
+
+        {/* Profile card */}
         <div
           className="
             pointer-events-none
-            absolute inset-0
+            absolute inset-0 z-20
             perspective-distant
           "
         >
-          {/* This wrapper controls where the card lands */}
+          {/* Mobile position */}
           <div
             className="
               pointer-events-auto
               absolute left-1/2 top-[70%]
-              -translate-x-1/2 -translate-y-1/2
-              lg:left-[85%] lg:top-[70%]
+              -translate-x-1/2
+              -translate-y-1/2
+
+              lg:left-auto
+              lg:right-[5%]
+              lg:top-[70%]
+              lg:translate-x-0
             "
           >
             <HeroCard />
           </div>
+        </div>
+
+        {/* Hero text */}
+        <div
+          className="
+            pointer-events-none
+            relative z-30
+            flex flex-col
+            items-start gap-20
+            p-8
+            sm:p-12
+            lg:p-20
+          "
+        >
+          <div className="pointer-events-auto">
+            <HeroTitle />
+          </div>
+
+          {/* <HeroSubtitle /> */}
         </div>
       </section>
     </main>
