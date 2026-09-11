@@ -46,7 +46,7 @@ const icons = [
     Icon: Server,
     label: "Backend Development",
     position:
-      "right-[12%] top-[72%]",
+      "right-[32%] top-[22%]",
     direction: "bottom",
     color: "bg-emerald-400",
     rotation: -8,

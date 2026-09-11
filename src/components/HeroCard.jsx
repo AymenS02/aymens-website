@@ -39,7 +39,7 @@ const HeroCard = () => {
             x: window.innerWidth,
             y: -80,
             rotationX: -180,
-            rotationY: -720,
+            rotationY: -950,
             rotationZ: 18,
             opacity: 0,
           },
@@ -232,7 +232,7 @@ const HeroCard = () => {
             </p>
 
             <p className="mt-1 font-basic text-[10px] font-semibold uppercase tracking-[0.18em] text-yellow-200 sm:text-xs">
-              Full-Stack • Azure
+              Full-Stack | Azure Cloud
             </p>
           </div>
 

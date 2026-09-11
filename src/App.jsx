@@ -2,8 +2,8 @@ import React from "react";
 
 import HeroTitle from "./components/HeroTitle";
 import HeroCard from "./components/HeroCard";
-import Icons from "./components/Icons";
-import Swirls from "./components/Swirls";
+// import Icons from "./components/Icons";
+// import Swirls from "./components/Swirls";
 
 const App = () => {
   return (
@@ -13,18 +13,18 @@ const App = () => {
         className="
           relative min-h-screen w-full
           overflow-hidden
-          bg-primary
+          bg-[#8a2f19]
         "
       >
         {/* Background swirls */}
-        <div className="pointer-events-none absolute inset-0 z-0">
+        {/* <div className="pointer-events-none absolute inset-0 z-0">
           <Swirls />
-        </div>
+        </div> */}
 
         {/* Animated icons */}
-        <div className="absolute inset-0 z-10">
+        {/* <div className="absolute inset-0 z-10">
           <Icons />
-        </div>
+        </div> */}
 
         {/* Profile card */}
         <div
@@ -55,6 +55,8 @@ const App = () => {
         {/* Hero text */}
         <div
           className="
+            h-screen
+            justify-center
             pointer-events-none
             relative z-30
             flex flex-col
