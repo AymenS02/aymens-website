@@ -4,6 +4,9 @@ import React, {
 } from "react";
 
 import gsap from "gsap";
+import { GSDevTools } from "gsap/GSDevTools";
+
+gsap.registerPlugin(GSDevTools);
 
 // const TITLE = "Aymen Shoteri";
 
@@ -302,34 +305,92 @@ import gsap from "gsap";
 
 const HeroTitle = () => {
   const container = useRef(null);
+  const backTitles = useRef([]);
+
+  const hoverTl = useRef();
 
   useLayoutEffect(() => {
+
+    let tl;
+
     const ctx = gsap.context(() => {
-      gsap.from(".hero-title", {
-        opacity: 0,
-        y: 30,
+      tl = gsap.timeline();
+
+      tl.from(".hero-title", {
+        y: 250,
         duration: 1,
         stagger: 0.2,
         ease: "power2.out",
       });
+
+      hoverTl.current = gsap.timeline({
+        paused: true,
+      });
+
+      backTitles.current.forEach((title, index) => {
+        hoverTl.current.to(
+          title,
+          {
+            y: -4 - index * 2,
+            rotation: -4 - index * 2,
+            duration: 0.4,
+            ease: "power2.out",
+          },
+          0
+        );
+      });
+
     }, container);
+
+
+    if (import.meta.env.DEV) {
+      GSDevTools.create({
+        animation: tl,
+      });
+    }
 
     return () => ctx.revert();
   }, []);
 
   return (
     <div ref={container}>
-      <h1 className="hero-title text-5xl font-bold text-white sm:text-7xl md:text-8xl lg:text-9xl">
-        Aymen
-      </h1>
+      <div className="overflow-hidden relative font-fun"
+        onMouseEnter={() => hoverTl.current.play()}
+        onMouseLeave={() => hoverTl.current.reverse()}>
+        <h1 className="relative z-10 [-webkit-text-stroke:2px_black] uppercase hero-title text-[clamp(4rem,18vw,14rem)] font-bold text-white">
+          Aymen
+        </h1>
+        <h1  ref={(el) => (backTitles.current[0] = el)} className="z-8 hero-title-back absolute inset-0 [-webkit-text-stroke:2px_black] uppercase text-[clamp(4rem,18vw,14rem)] font-bold text-red-400">
+          Aymen
+        </h1>
+        <h1  ref={(el) => (backTitles.current[1] = el)} className="z-6 hero-title-back absolute inset-0 [-webkit-text-stroke:2px_black] uppercase text-[clamp(4rem,18vw,14rem)] font-bold text-red-600">
+          Aymen
+        </h1>
+        <h1  ref={(el) => (backTitles.current[2] = el)} className="z-4 hero-title-back absolute inset-0 [-webkit-text-stroke:2px_black] uppercase text-[clamp(4rem,18vw,14rem)] font-bold text-red-800">
+          Aymen
+        </h1>
+        <h1  ref={(el) => (backTitles.current[3] = el)} className="z-3 hero-title-back absolute inset-0 [-webkit-text-stroke:2px_black] uppercase text-[clamp(4rem,18vw,14rem)] font-bold text-purple-600">
+          Aymen
+        </h1>
+        <h1  ref={(el) => (backTitles.current[4] = el)} className="z-2 hero-title-back absolute inset-0 [-webkit-text-stroke:2px_black] uppercase text-[clamp(4rem,18vw,14rem)] font-bold text-purple-800">
+          Aymen
+        </h1>
+      </div>
 
-      <h1 className="hero-title text-5xl font-bold text-white sm:text-7xl md:text-8xl lg:text-9xl">
-        Shoteri
-      </h1>
 
-      <h2 className="hero-title text-lg text-white/80 mt-4 sm:text-xl md:text-2xl">
-        Full Stack Developer | Azure Cloud Engineer | DevOps Enthusiast
-      </h2>
+
+      {/* <div className="overflow-hidden">
+        <h1 className="uppercase -mt-20 hero-title text-[clamp(4rem,18vw,14rem)] font-bold text-white">
+          Shoteri
+        </h1>
+      </div>
+
+      <div className="overflow-hidden">
+        <h1 className="uppercase hero-title text-9xl font-bold text-white">
+          Full Stack Engineer
+        </h1>
+      </div> */}
+
     </div>
   );
 };
