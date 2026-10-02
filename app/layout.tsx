@@ -6,6 +6,8 @@ import Navigation from "@/components/Navigation";
 import SmoothScroll from "@/components/SmoothScroll";
 import MobileNavigation from "@/components/MobileNavigation";
 
+import { Analytics } from "@vercel/analytics/next"
+
 const zti = localFont({
   src: "../fonts/Zodiak-ThinItalic.woff2",
   variable: "--font-zti",
@@ -50,6 +52,7 @@ export default function RootLayout({
 
         <Navigation />
         <MobileNavigation />
+        <Analytics />
 
       </body>
     </html>
