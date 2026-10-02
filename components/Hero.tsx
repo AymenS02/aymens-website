@@ -1,14 +1,12 @@
 "use client";
 
-import { Fragment, useEffect, useLayoutEffect, useRef } from "react";
+import { Fragment, useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 const ROLES = ["Full Stack Developer", "Azure Certified", "React & AI Engineer"];
 
@@ -79,7 +77,7 @@ const NamePart = ({ initial, rest }: { initial: string; rest: string }) => (
 const Hero = () => {
   const rootRef = useRef<HTMLElement>(null);
 
-  useIsoLayoutEffect(() => {
+  useLayoutEffect(() => {
     const root = rootRef.current;
     if (!root) return;
 
@@ -98,31 +96,31 @@ const Hero = () => {
 
         // reduced motion: just show everything
         if (!motion) {
-          gsap.set(q("[data-name],[data-tag-item],[data-photo],[data-meta]"), { opacity: 1 });
+          gsap.set(q("[data-name],[data-tag-item],[data-photo],[data-meta]"), { autoAlpha: 1 });
           gsap.set(q("[data-rule]"), { width: "100%" });
           return;
         }
 
         /* ------------------------- initial hidden states ------------------------ */
         gsap.set(q("[data-script]"), {
-          opacity: 0,
+          autoAlpha: 0,
           scale: 1.3,
           filter: "blur(16px)",
           transformOrigin: "50% 60%",
         });
         gsap.set(q("[data-char]"), { yPercent: 115 });
-        gsap.set(q("[data-name]"), { opacity: 1 }); // chars are hidden, safe to reveal the h1
-        gsap.set(q("[data-tag-item]"), { opacity: 0, y: 14 });
-        gsap.set(q("[data-photo]"), { opacity: 1, clipPath: "inset(100% 0% 0% 0%)" });
+        gsap.set(q("[data-name]"), { autoAlpha: 1 }); // chars are hidden, safe to reveal the h1
+        gsap.set(q("[data-tag-item]"), { autoAlpha: 0, y: 14 });
+        gsap.set(q("[data-photo]"), { autoAlpha: 1, clipPath: "inset(100% 0% 0% 0%)" });
         gsap.set(q("[data-photo-img]"), { scale: 1.35, filter: "brightness(0.5)" });
-        gsap.set(q("[data-meta]"), { opacity: 0, y: 14 });
+        gsap.set(q("[data-meta]"), { autoAlpha: 0, y: 14 });
         gsap.set(q("[data-rule]"), { width: "0%" });
 
         /* -------------------------------- entrance ------------------------------ */
         gsap
           .timeline({ defaults: { ease: "expo.out" }, delay: 0.15 })
           .to(q("[data-script]"), {
-            opacity: 1,
+            autoAlpha: 1,
             scale: 1,
             filter: "blur(0px)",
             duration: 1.8,
@@ -134,9 +132,9 @@ const Hero = () => {
             0.2
           )
           .to(q("[data-photo-img]"), { scale: 1, filter: "brightness(1)", duration: 2.4 }, 0.2)
-          .to(q("[data-tag-item]"), { opacity: 1, y: 0, duration: 1.1, stagger: 0.1 }, 0.9)
+          .to(q("[data-tag-item]"), { autoAlpha: 1, y: 0, duration: 1.1, stagger: 0.1 }, 0.9)
           .to(q("[data-rule]"), { width: "100%", duration: 1.8, ease: "power3.inOut" }, 0.9)
-          .to(q("[data-meta]"), { opacity: 1, y: 0, duration: 1.1, stagger: 0.12 }, 1.2);
+          .to(q("[data-meta]"), { autoAlpha: 1, y: 0, duration: 1.1, stagger: 0.12 }, 1.2);
 
         /* ----------------------- scroll: layers drift apart ---------------------- */
         const scrub = { trigger: root, start: "top top", end: "bottom top", scrub: true };

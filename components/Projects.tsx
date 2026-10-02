@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { projects as rawProjects } from "@/data/projects";
@@ -21,8 +21,6 @@ type Project = {
 
 const projects = rawProjects as Project[];
 const CATEGORIES = ["all", ...Array.from(new Set(projects.map((p) => p.category)))];
-
-const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 /* -------------------------------------------------------------------------- */
 /*  Helpers                                                                   */
@@ -210,25 +208,25 @@ export default function ProjectsPage() {
   const archive = filtered.filter((p) => !p.featured);
 
   /* ------------------------------ hero intro ------------------------------ */
-  useIsoLayoutEffect(() => {
+  useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       gsap.set("[data-title]", { opacity: 1 });
       gsap.set("[data-char]", { yPercent: 115 });
       gsap.set("[data-script]", {
-        opacity: 0,
+        autoAlpha: 0,
         scale: 1.25,
         rotate: -6,
         filter: "blur(14px)",
         transformOrigin: "50% 60%",
       });
-      gsap.set("[data-hero-fade]", { opacity: 0, y: 20 });
+      gsap.set("[data-hero-fade]", { autoAlpha: 0, y: 20 });
       gsap.set("[data-hero-line]", { width: "0%" });
 
       const count = { v: 0 };
       const tl = gsap.timeline({ defaults: { ease: "expo.out" }, delay: 0.15 });
 
       tl.to("[data-script]", {
-        opacity: 1,
+        autoAlpha: 1,
         scale: 1,
         rotate: 0,
         filter: "blur(0px)",
@@ -236,7 +234,7 @@ export default function ProjectsPage() {
       })
         .to("[data-char]", { yPercent: 0, duration: 1.4, stagger: 0.06 }, 0.25)
         .to("[data-hero-line]", { width: "100%", duration: 1.8, ease: "power3.inOut" }, 0.6)
-        .to("[data-hero-fade]", { opacity: 1, y: 0, duration: 1.2, stagger: 0.12 }, 0.9)
+        .to("[data-hero-fade]", { autoAlpha: 1, y: 0, duration: 1.2, stagger: 0.12 }, 0.9)
         .to(
           count,
           {
@@ -268,7 +266,7 @@ export default function ProjectsPage() {
   }, []);
 
   /* --------------------------- filter underline --------------------------- */
-  useIsoLayoutEffect(() => {
+  useLayoutEffect(() => {
     const move = () => {
       const el = tabRefs.current[active];
       if (!el || !indicator.current) return;
@@ -286,7 +284,7 @@ export default function ProjectsPage() {
   }, [active]);
 
   /* ------------------- rows: scroll reveal + hover preview ------------------ */
-  useIsoLayoutEffect(() => {
+  useLayoutEffect(() => {
     const list = listRef.current;
     if (!list) return;
 
@@ -302,7 +300,7 @@ export default function ProjectsPage() {
         const fills = el.querySelectorAll("[data-fill]");
 
         gsap.set(masks, { yPercent: 110 });
-        gsap.set(fades, { opacity: 0, y: 18 });
+        gsap.set(fades, { autoAlpha: 0, y: 18 });
         gsap.set(lines, { width: "0%" });
         gsap.set(fills, { scaleX: 0, transformOrigin: "left center" });
         gsap.set(el, { opacity: 1 });
@@ -314,7 +312,7 @@ export default function ProjectsPage() {
           })
           .to(lines, { width: "100%", duration: 1.4, ease: "power3.inOut" }, 0)
           .to(masks, { yPercent: 0, duration: 1.2, stagger: 0.08 }, 0.1)
-          .to(fades, { opacity: 1, y: 0, duration: 1, stagger: 0.08 }, 0.3);
+          .to(fades, { autoAlpha: 1, y: 0, duration: 1, stagger: 0.08 }, 0.3);
       };
 
       list.querySelectorAll("[data-row]").forEach(reveal);
