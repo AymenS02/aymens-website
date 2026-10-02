@@ -22,10 +22,10 @@ export default function Home() {
       <section id="projects">
         <Projects />
       </section>
-{/* 
+
       <section id="personal">
         <PersonalLife />
-      </section> */}
+      </section>
     </main>
   );
 }
