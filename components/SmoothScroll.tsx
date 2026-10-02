@@ -27,7 +27,7 @@ export default function SmoothScroll() {
       smoothWheel: true,
     });
 
-    (window as unknown as { lenis?: LenisInstance }).lenis = {
+    (window as unknown as { __lenis?: LenisInstance }).__lenis = {
       scrollTo: lenis.scrollTo.bind(lenis),
       start: lenis.start.bind(lenis),
       stop: lenis.stop.bind(lenis),
@@ -43,7 +43,7 @@ export default function SmoothScroll() {
     gsap.ticker.lagSmoothing(0);
 
     return () => {
-      window.lenis = undefined;
+      (window as unknown as { __lenis?: LenisInstance }).__lenis = undefined;
       gsap.ticker.remove(update);
       lenis.destroy();
     };

@@ -15,7 +15,7 @@ type LenisLike = {
   start: () => void;
   stop: () => void;
 };
-const getLenis = () => (window as unknown as { lenis?: LenisLike }).lenis;
+const getLenis = () => (window as unknown as { __lenis?: LenisLike }).__lenis;
 
 const NAV_ITEMS = [
   { name: "Home", id: "home" },

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
-import { JetBrains_Mono } from "next/font/google";
 import Navigation from "@/components/Navigation";
 
 import SmoothScroll from "@/components/SmoothScroll";
@@ -26,12 +24,6 @@ const nis = localFont({
   display: "swap",
 });
 
-const jbm = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-jbm",
-});
-
 export const metadata: Metadata = {
   title: "Aymen Shoteri",
   description:
@@ -46,7 +38,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${zti.variable} ${zl.variable} ${nis.variable} ${jbm.variable} h-full antialiased`}
+      className={`${zti.variable} ${zl.variable} ${nis.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
 
