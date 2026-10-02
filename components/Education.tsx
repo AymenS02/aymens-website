@@ -89,7 +89,7 @@ const Education = () => {
     <section
       ref={rootRef}
       id="education"
-      className="flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center"
+      className="flex min-h-[40vh] flex-col items-center justify-center px-6 py-24 text-center mt-20 md:mt-48"
     >
       <h2
         data-title

@@ -6,32 +6,16 @@ export const experiences = [
     image: "./experience/macmsa.png",
     highlights: [
       {
-        icon: "Users",
-        text: "Collaborated in a team of 6 to build a full-stack website and portal."
+        text: "Developed a full-stack student portal using React, Next.js, Tailwind CSS, and Firebase while collaborating in an Agile team of 6 developers."
       },
       {
-        icon: "Code",
-        text: "Built a responsive front-end with React, Next.js, and Tailwind CSS."
+        text: "Implemented secure role-based authentication and admin functionality using Firebase Authentication and Firestore."
       },
       {
-        icon: "Database",
-        text: "Secured admin access using Firebase Authentication."
+        text: "Engineered responsive user interfaces with GSAP animations, delivering smooth, engaging user experiences across devices."
       },
       {
-        icon: "Database",
-        text: "Utilized Firebase Firestore for scalable real-time data storage."
-      },
-      {
-        icon: "Code",
-        text: "Incorporated GSAP animations for engaging UI transitions."
-      },
-      {
-        icon: "Palette",
-        text: "Designed admin dashboards to manage portal content efficiently."
-      },
-      {
-        icon: "Database",
-        text: "Optimized for performance during high-traffic periods."
+        text: "Optimized application performance and scalability to support high-traffic student events and concurrent users."
       }
     ]
   },
@@ -42,28 +26,16 @@ export const experiences = [
     image: "./experience/r2r.png",
     highlights: [
       {
-        icon: "Code",
-        text: "Developed a custom site with React and Tailwind CSS, serving 200+ visitors."
+        text: "Developed a responsive React and Tailwind CSS website serving 200+ users with a modern, mobile-first design."
       },
       {
-        icon: "Palette",
-        text: "Implemented Tailwind CSS for a responsive and modern design."
+        text: "Built an event registration and retreat booking system that streamlined user sign-ups and management."
       },
       {
-        icon: "Code",
-        text: "Utilized GSAP animations to create smooth, interactive experiences."
+        text: "Created polished, interactive user experiences with GSAP animations and reusable UI components."
       },
       {
-        icon: "Database",
-        text: "Managed secure user registration with a scalable backend."
-      },
-      {
-        icon: "Users",
-        text: "Built a retreat booking system to streamline user sign-ups."
-      },
-      {
-        icon: "Database",
-        text: "Optimized performance for high traffic and fast load times."
+        text: "Improved website performance through responsive optimization, ensuring fast load times across devices."
       }
     ]
   },
@@ -74,28 +46,16 @@ export const experiences = [
     image: "./experience/thewin.png",
     highlights: [
       {
-        icon: "Code",
-        text: "Spearheaded the development of a dynamic educational platform using JavaScript, incorporating Coursera-like course management."
+        text: "Developed a full-stack educational platform with JavaScript, REST APIs, and MongoDB Atlas supporting 100+ active users."
       },
       {
-        icon: "Palette",
-        text: "Implemented SCSS into the design to increase manageability and readability."
+        text: "Integrated secure payment processing using Collect.js, tokenization, and public security keys."
       },
       {
-        icon: "Database",
-        text: "Integrated secure payment gateways and user authentication using Collect.js, Tokenization, and Public Security Keys."
+        text: "Designed and optimized RESTful APIs and database operations to improve scalability and maintainability."
       },
       {
-        icon: "Database",
-        text: "Designed and maintained RESTful APIs and optimized performance with MongoDB Atlas."
-      },
-      {
-        icon: "Users",
-        text: "Ensured reliable performance for 100+ active users, managing their data securely."
-      },
-      {
-        icon: "Code",
-        text: "Engineered a responsive and intuitive UI for smooth usability across screen sizes."
+        text: "Built responsive, user-friendly interfaces with SCSS, delivering a consistent experience across desktop and mobile."
       }
     ]
   },
@@ -106,28 +66,16 @@ export const experiences = [
     image: "./experience/logoN.png",
     highlights: [
       {
-        icon: "Code",
-        text: "Developed custom websites using React and Next.js, aligned with client needs."
+        text: "Designed and developed custom business websites using Next.js, React, and Tailwind CSS tailored to client requirements."
       },
       {
-        icon: "Palette",
-        text: "Implemented Tailwind CSS for faster development and consistent styling."
+        text: "Integrated Stripe and PayPal payment systems, enabling secure online payments and subscription workflows."
       },
       {
-        icon: "Database",
-        text: "Integrated secure payments and subscriptions using Stripe and PayPal APIs."
+        text: "Built engaging, high-performance websites with GSAP and Framer Motion to elevate user experience."
       },
       {
-        icon: "Code",
-        text: "Created animated sites with Framer Motion for dynamic user engagement."
-      },
-      {
-        icon: "Users",
-        text: "Managed MongoDB client databases for secure, scalable storage."
-      },
-      {
-        icon: "Palette",
-        text: "Designed and built interfaces with Figma and React, improving client satisfaction."
+        text: "Developed scalable full-stack applications using MongoDB and Cloudinary with modern deployment workflows."
       }
     ]
   },

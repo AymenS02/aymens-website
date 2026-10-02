@@ -261,6 +261,9 @@ const Hero = () => {
             ))}
           </nav>
         </div>
+
+       <span className="absolute left-0 bottom-0 h-px w-full bg-white/20" />
+
       </div>
     </section>
   );

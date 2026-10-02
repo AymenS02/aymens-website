@@ -46,11 +46,11 @@ const SectionHead = ({ label, count }: { label: string; count: number }) => (
   <div data-section className="mb-4 mt-20 flex items-center justify-between">
     <span
       data-fade
-      className="font-jbm text-xs uppercase tracking-[0.3em] text-neutral-500"
+      className="font-jbm text-xs uppercase tracking-[0.3em] text-neutral-400"
     >
       {label}
     </span>
-    <span data-fade className="font-jbm text-xs text-neutral-500">
+    <span data-fade className="font-jbm text-xs text-neutral-400">
       ({String(count).padStart(2, "0")})
     </span>
   </div>
@@ -74,7 +74,7 @@ function Row({ p, n, large }: { p: Project; n: number; large: boolean }) {
         {/* index */}
         <span
           data-fade
-          className="pt-2 font-jbm text-xs text-neutral-500 md:pt-0"
+          className="pt-2 font-jbm text-xs text-neutral-400 md:pt-0"
         >
           {String(n).padStart(2, "0")}
         </span>
@@ -83,7 +83,7 @@ function Row({ p, n, large }: { p: Project; n: number; large: boolean }) {
         <div className="min-w-0">
           <p
             data-fade
-            className="mb-3 font-jbm text-[10px] uppercase tracking-[0.3em] text-neutral-500"
+            className="mb-3 font-jbm text-[10px] uppercase tracking-[0.3em] text-neutral-400"
           >
             {p.category}
           </p>
@@ -102,7 +102,7 @@ function Row({ p, n, large }: { p: Project; n: number; large: boolean }) {
           </h3>
 
           {subtitle && (
-            <p data-fade className="mt-2 font-nis text-sm text-neutral-400">
+            <p data-fade className="mt-2 font-jbm text-sm text-neutral-400">
               {subtitle}
             </p>
           )}
@@ -110,7 +110,7 @@ function Row({ p, n, large }: { p: Project; n: number; large: boolean }) {
           {large && (
             <p
               data-fade
-              className="mt-4 hidden max-w-xl font-nis text-sm leading-relaxed text-neutral-500 md:block"
+              className="mt-4 hidden max-w-xl font-jbm text-sm leading-relaxed text-neutral-400 md:block"
             >
               {p.description}
             </p>
@@ -124,7 +124,7 @@ function Row({ p, n, large }: { p: Project; n: number; large: boolean }) {
             loading="lazy"
             className="mt-5 aspect-[16/10] w-full object-cover md:hidden"
           />
-          <ul className="mt-4 flex flex-wrap gap-x-3 gap-y-1 font-jbm text-[10px] uppercase tracking-widest text-neutral-500 md:hidden">
+          <ul className="mt-4 flex flex-wrap gap-x-3 gap-y-1 font-jbm text-[10px] uppercase tracking-widest text-neutral-400 md:hidden">
             {p.tech.slice(0, 4).map((t) => (
               <li key={t}>{t}</li>
             ))}
@@ -134,7 +134,7 @@ function Row({ p, n, large }: { p: Project; n: number; large: boolean }) {
         {/* desktop tech */}
         <ul
           data-fade
-          className="hidden flex-col gap-1 font-jbm text-[11px] uppercase tracking-widest text-neutral-500 md:flex"
+          className="hidden flex-col gap-1 font-jbm text-[11px] uppercase tracking-widest text-neutral-400 md:flex"
         >
           {p.tech.slice(0, 4).map((t) => (
             <li key={t}>{t}</li>
@@ -151,7 +151,7 @@ function Row({ p, n, large }: { p: Project; n: number; large: boolean }) {
               href={p.githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="pointer-events-auto hidden font-jbm text-[10px] uppercase tracking-[0.25em] text-neutral-500 transition-colors hover:text-neutral-100 md:block"
+              className="pointer-events-auto hidden font-jbm text-[10px] uppercase tracking-[0.25em] text-neutral-400 transition-colors hover:text-neutral-100 md:block"
             >
               Code
             </a>
@@ -453,15 +453,8 @@ export default function ProjectsPage() {
       </div>
 
       {/* ------------------------------- HERO -------------------------------- */}
-      <section data-hero className="relative flex min-h-[85vh] items-end pb-16 pt-40">
+      <section data-hero className="relative flex min-h-[35vh] items-end pb-16">
         <div className="mx-auto w-full max-w-6xl px-6 md:px-10">
-          <p
-            data-hero-fade
-            className="mb-8 font-jbm text-xs uppercase tracking-[0.3em] text-neutral-500"
-          >
-            Selected Work
-          </p>
-
           <div data-hero-title>
             <h1
               data-title
@@ -480,30 +473,6 @@ export default function ProjectsPage() {
             </h1>
           </div>
 
-          <div className="mt-14">
-            <div className="relative h-px w-full">
-              <span
-                data-hero-line
-                className="absolute left-0 top-0 h-px w-full bg-white/20"
-              />
-            </div>
-
-            <div className="mt-6 flex items-end justify-between gap-8">
-              <p
-                data-hero-fade
-                className="max-w-md font-nis text-base leading-relaxed text-neutral-400"
-              >
-                Production sites, tools and experiments — built end to end, from interface to
-                database.
-              </p>
-              <p
-                data-hero-fade
-                className="shrink-0 font-jbm text-xs uppercase tracking-[0.25em] text-neutral-500"
-              >
-                <span ref={countRef}>00</span> projects
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -518,7 +487,7 @@ export default function ProjectsPage() {
               }}
               onClick={() => changeFilter(c)}
               className={`relative whitespace-nowrap pb-4 font-jbm text-[11px] uppercase tracking-[0.25em] transition-colors duration-300 ${
-                active === c ? "text-neutral-100" : "text-neutral-500 hover:text-neutral-300"
+                active === c ? "text-neutral-100" : "text-neutral-400 hover:text-neutral-400"
               }`}
             >
               {c}
@@ -557,7 +526,7 @@ export default function ProjectsPage() {
         )}
 
         {filtered.length === 0 && (
-          <p className="mt-20 font-jbm text-xs uppercase tracking-[0.3em] text-neutral-500">
+          <p className="mt-20 font-jbm text-xs uppercase tracking-[0.3em] text-neutral-400">
             Nothing here yet.
           </p>
         )}
