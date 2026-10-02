@@ -143,8 +143,9 @@ const Navigation = () => {
 
     setActive(i);
 
-    if (window.lenis) {
-      (window as Window & { lenis?: LenisInstance }).lenis?.scrollTo(target, { immediate: true });
+    const lenis = (window as unknown as { __lenis?: LenisInstance }).__lenis;
+    if (lenis) {
+      lenis.scrollTo(target, { immediate: true });
     } else {
       target.scrollIntoView({ behavior: "auto" });
     }

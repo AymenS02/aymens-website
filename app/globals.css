@@ -12,7 +12,7 @@
   --font-zti: var(--font-zti);
   --font-zl: var(--font-zl);
   --font-nis: var(--font-nis);
-  --font-jbm: var(--font-jbm);
+  --font-jbm: "JetBrains Mono", "Courier New", monospace;
 }
 
 @media (prefers-color-scheme: dark) {
