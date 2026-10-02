@@ -54,7 +54,7 @@ const NamePart = ({ initial, rest }: { initial: string; rest: string }) => (
   <span aria-hidden className="inline-flex items-center gap-2">
     <span
       data-script
-      className="-mr-2 inline-block font-nis text-5xl sm:text-6xl sm:-mr-3 md:-mr-4 md:text-7xl 2xl:text-9xl"
+      className="-mr-2 inline-block font-nis text-4xl sm:text-6xl sm:-mr-3 md:-mr-4 md:text-7xl 2xl:text-9xl"
     >
       {initial}
     </span>
