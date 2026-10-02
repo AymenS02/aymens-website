@@ -183,7 +183,7 @@ const Hero = () => {
           <h1
             data-name
             aria-label="Aymen Shoteri"
-            className="flex items-center gap-x-2 opacity-0 md:flex-nowrap"
+            className="flex items-center gap-x-2 md:flex-nowrap"
           >
             <NamePart initial="A" rest="YMEN" />
             <NamePart initial="S" rest="HOTERI" />
@@ -203,7 +203,7 @@ const Hero = () => {
                     className="hidden h-3 w-px bg-white/30 opacity-0 md:block"
                   />
                 )}
-                <li data-tag-item className="opacity-0">
+                <li data-tag-item>
                   {role}
                 </li>
               </Fragment>
@@ -216,7 +216,7 @@ const Hero = () => {
           data-photo-wrap
           className="relative z-10 mt-12 w-full max-w-[21.5rem] shrink-0 md:mt-0 md:-ml-20 min-[1736px]:-ml-28 min-[1736px]:max-w-[34rem]"
         >
-          <div data-photo className="relative aspect-[6/7] w-full overflow-hidden opacity-0">
+          <div data-photo className="relative aspect-[6/7] w-full overflow-hidden">
             <Image
               data-photo-img
               src="/profileO.jpeg"
@@ -237,7 +237,7 @@ const Hero = () => {
         <div className="flex flex-col gap-6 pt-6 md:flex-row md:items-end md:justify-between">
           <p
             data-meta
-            className="font-jbm text-sm leading-relaxed text-neutral-300 opacity-0"
+            className="font-jbm text-sm leading-relaxed text-neutral-300"
           >
             24 years old,
             <br />
@@ -247,7 +247,7 @@ const Hero = () => {
           <nav
             data-meta
             aria-label="Links"
-            className="flex items-center gap-3 font-jbm text-sm opacity-0"
+            className="flex items-center gap-3 font-jbm text-sm"
           >
             {LINKS.map((l, i) => (
               <Fragment key={l.label}>
