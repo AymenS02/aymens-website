@@ -1,18 +1,16 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
-
 const Education = () => {
   const rootRef = useRef<HTMLElement>(null);
 
-  useIsoLayoutEffect(() => {
+  useLayoutEffect(() => {
     const root = rootRef.current;
     if (!root) return;
 
@@ -24,25 +22,25 @@ const Education = () => {
 
       // reduced motion: show the final state
       if (!motion) {
-        gsap.set(q("[data-title],[data-logo],[data-fade]"), { opacity: 1 });
+        gsap.set(q("[data-title],[data-logo],[data-fade]"), { autoAlpha: 1 });
         return;
       }
 
       /* ----------------------------- hidden states ----------------------------- */
       gsap.set(q("[data-script]"), {
-        opacity: 0,
+        autoAlpha: 0,
         scale: 1.3,
         filter: "blur(16px)",
         transformOrigin: "50% 60%",
       });
       gsap.set(q("[data-char]"), { yPercent: 115 });
-      gsap.set(q("[data-title]"), { opacity: 1 });
-      gsap.set(q("[data-logo]"), { opacity: 1, clipPath: "inset(0% 100% 0% 0%)" });
+      gsap.set(q("[data-title]"), { autoAlpha: 1 });
+      gsap.set(q("[data-logo]"), { autoAlpha: 1, clipPath: "inset(0% 100% 0% 0%)" });
       gsap.set(q("[data-logo-img]"), { scale: 1.2 });
       gsap.set(q("[data-vline]"), { scaleY: 0, transformOrigin: "top center" });
       gsap.set(q("[data-hline]"), { scaleX: 0, transformOrigin: "left center" });
       gsap.set(q("[data-mask]"), { yPercent: 110 });
-      gsap.set(q("[data-fade]"), { opacity: 0, y: 14 });
+      gsap.set(q("[data-fade]"), { autoAlpha: 0, y: 14 });
 
       /* -------------------------------- entrance -------------------------------- */
       gsap
@@ -51,7 +49,7 @@ const Education = () => {
           scrollTrigger: { trigger: root, start: "top 60%", once: true },
         })
         .to(q("[data-script]"), {
-          opacity: 1,
+          autoAlpha: 1,
           scale: 1,
           filter: "blur(0px)",
           duration: 1.8,
@@ -65,7 +63,7 @@ const Education = () => {
         .to(q("[data-logo-img]"), { scale: 1, duration: 2 }, 0.6)
         .to(q("[data-vline],[data-hline]"), { scaleX: 1, scaleY: 1, duration: 1.4, ease: "power3.inOut" }, 1)
         .to(q("[data-mask]"), { yPercent: 0, duration: 1.2 }, 1.2)
-        .to(q("[data-fade]"), { opacity: 1, y: 0, duration: 1 }, 1.4);
+        .to(q("[data-fade]"), { autoAlpha: 1, y: 0, duration: 1 }, 1.4);
 
       /* ---------------------- logo drifts as you scroll past -------------------- */
       gsap.fromTo(

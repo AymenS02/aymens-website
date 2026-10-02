@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { experiences } from "@/data/experiences";
@@ -19,8 +19,6 @@ type Experience = {
 const data = experiences as Experience[];
 const pad = (n: number) => String(n).padStart(2, "0");
 const src = (s: string) => s.replace(/^\.\//, "/");
-
-const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 /* Script first letter + masked characters, word-safe wrapping */
 const Title = ({ text }: { text: string }) => (
@@ -57,7 +55,7 @@ const Title = ({ text }: { text: string }) => (
 const Work = () => {
   const rootRef = useRef<HTMLElement>(null);
 
-  useIsoLayoutEffect(() => {
+  useLayoutEffect(() => {
     const root = rootRef.current;
     if (!root) return;
 
@@ -70,19 +68,19 @@ const Work = () => {
 
       gsap.set(root.querySelector("[data-i-title]"), { opacity: 1 });
       gsap.set(iScript, {
-        opacity: 0,
+        autoAlpha: 0,
         scale: 1.3,
         filter: "blur(16px)",
         transformOrigin: "50% 60%",
       });
       gsap.set(iChars, { yPercent: 115 });
-      gsap.set(iFades, { opacity: 0, y: 14 });
+      gsap.set(iFades, { autoAlpha: 0, y: 14 });
 
       gsap
         .timeline({ defaults: { ease: "expo.out" }, delay: 0.2 })
-        .to(iScript, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.8 })
+        .to(iScript, { autoAlpha: 1, scale: 1, filter: "blur(0px)", duration: 1.8 })
         .to(iChars, { yPercent: 0, duration: 1.3, stagger: 0.07 }, 0.35)
-        .to(iFades, { opacity: 1, y: 0, duration: 1.1, stagger: 0.1 }, 1);
+        .to(iFades, { autoAlpha: 1, y: 0, duration: 1.1, stagger: 0.1 }, 1);
 
       gsap.fromTo(
         iLine,
@@ -105,12 +103,12 @@ const Work = () => {
 
         gsap.set(chars, { yPercent: 115 });
         gsap.set(script, {
-          opacity: 0,
+          autoAlpha: 0,
           scale: 1.25,
           filter: "blur(12px)",
           transformOrigin: "50% 60%",
         });
-        gsap.set(fades, { opacity: 0, y: 20 });
+        gsap.set(fades, { autoAlpha: 0, y: 20 });
         gsap.set(logo, { clipPath: "inset(0% 100% 0% 0%)" });
         gsap.set(topLine, { scaleX: 0, transformOrigin: "left center" });
         gsap.set(progress, { scaleX: 0, transformOrigin: "left center" });
@@ -123,9 +121,9 @@ const Work = () => {
           })
           .to(topLine, { scaleX: 1, duration: 1.6, ease: "power3.inOut" }, 0)
           .to(logo, { clipPath: "inset(0% 0% 0% 0%)", duration: 1.2 }, 0.1)
-          .to(script, { opacity: 1, scale: 1, filter: "blur(0px)", duration: 1.5 }, 0.2)
+          .to(script, { autoAlpha: 1, scale: 1, filter: "blur(0px)", duration: 1.5 }, 0.2)
           .to(chars, { yPercent: 0, duration: 1.2, stagger: 0.035 }, 0.3)
-          .to(fades, { opacity: 1, y: 0, duration: 1, stagger: 0.1 }, 0.6);
+          .to(fades, { autoAlpha: 1, y: 0, duration: 1, stagger: 0.1 }, 0.6);
 
         // how far through this role you are
         gsap.to(progress, {
