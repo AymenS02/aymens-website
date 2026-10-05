@@ -12,8 +12,8 @@ const ROLES = ["Full Stack Developer", "Azure Certified", "React & AI Engineer"]
 
 const LINKS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/aymen-shoteri/" },
-  { label: "Github", href: "https://github.com/aymen-shoteri" },
-  { label: "Resume", href: "/ShoteriAresume.pdf" },
+  { label: "Github", href: "https://github.com/AymenS02" },
+  { label: "Resume", href: "/ResumeAymenShoteri.pdf" },
   { label: "Email", href: "mailto:aymen.shoteri@gmail.com" },
 ];
 
