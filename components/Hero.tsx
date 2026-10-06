@@ -14,7 +14,7 @@ const LINKS = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/aymen-shoteri/" },
   { label: "Github", href: "https://github.com/AymenS02" },
   { label: "Resume", href: "/ResumeAymenShoteri.pdf" },
-  { label: "Email", href: "mailto:aymen.shoteri@gmail.com" },
+  { label: "Email", href: "mailto:shoteriaymen@gmail.com" },
 ];
 
 /* ------------------------------ roll-over link ----------------------------- */
