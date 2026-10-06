@@ -85,7 +85,7 @@ const Work = () => {
                     </p>
 
                     <div className="mb-6 flex items-center gap-5">
-                      <div className="h-16 w-16 shrink-0 bg-neutral-200 p-2.5 md:h-20 md:w-20">
+                      <div className="h-16 w-16 shrink-0 md:h-20 md:w-20">
                         <img
                           src={src(e.image)}
                           alt={`${e.company} logo`}

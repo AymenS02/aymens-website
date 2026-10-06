@@ -1,5 +1,25 @@
 export const experiences = [
   {
+    company: "Muslim Association of Hamilton (MAH)",
+    period: "2026 - Present",
+    role: "Full Stack Developer",
+    image: "./experience/mah.webp",
+    highlights: [
+      {
+        text: "Developed full-stack community platforms using React, Next.js, TypeScript, Tailwind CSS, and MongoDB to streamline youth program management and engagement."
+      },
+      {
+        text: "Built secure authentication systems, role-based access control, and administrative dashboards to manage users, events, and organizational workflows."
+      },
+      {
+        text: "Designed responsive and intuitive interfaces focused on improving accessibility and user experience across web and mobile devices."
+      },
+      {
+        text: "Collaborated with community stakeholders to translate operational requirements into scalable software solutions that improve program coordination and efficiency."
+      }
+    ]
+  },
+  {
     company: "McMaster MSA",
     period: "October 2024 - Present",
     role: "Full Stack Developer",
